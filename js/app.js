@@ -1,6 +1,7 @@
 "use strict";
 
 const PROPERTY_DATA_URL = "data/properties.json";
+const CANDIDATE_DATA_URL = "data/candidates-2026-07.json";
 const COUNTY_DATA_URL = "data/counties.json";
 let properties = [];
 let counties = {};
@@ -9,11 +10,17 @@ let activePropertyId = null;
 let openAccordionSection = "overview";
 
 function formatCurrency(value) {
+  if (!Number(value) || Number(value) <= 0) return "Price TBD";
   return new Intl.NumberFormat("en-US", {
     style: "currency",
     currency: "USD",
     maximumFractionDigits: 0
   }).format(value);
+}
+
+function pricePerAcre(property) {
+  if (!Number(property.price) || !Number(property.acres)) return "price per acre pending";
+  return `approximately ${formatCurrency(Math.round(property.price / property.acres))} per acre`;
 }
 
 function verdictClass(verdict) {
@@ -72,7 +79,7 @@ function overviewContent(property) {
       <div class="overview-score">${property.score}</div>
     </div>
     <div class="overview-price">${formatCurrency(property.price)}</div>
-    <div class="overview-subprice">${property.acres} acres · approximately ${formatCurrency(Math.round(property.price / property.acres))} per acre</div>
+    <div class="overview-subprice">${property.acres} acres · ${pricePerAcre(property)}</div>
     <div class="overview-decision"><strong>${property.verdict}: Would we spend our own money today?</strong><br>${property.moneyToday}</div>
     <div class="overview-meters"><div class="overview-meter"><small>Opportunity</small><strong>${property.score}/100</strong></div><div class="overview-meter"><small>Confidence</small><strong>${confidence}%</strong></div></div>
     <div class="compact-actions"><a class="btn primary" href="${property.links.listing}" target="_blank" rel="noopener">OPEN LISTING</a><a class="btn secondary" href="${property.links.googleMaps}" target="_blank" rel="noopener">GOOGLE MAPS</a></div>`;
@@ -189,15 +196,18 @@ function addMarkers() {
 
 async function initializeDashboard() {
   try {
-    const [propertyResponse, countyResponse] = await Promise.all([
+    const [propertyResponse, candidateResponse, countyResponse] = await Promise.all([
       fetch(PROPERTY_DATA_URL, { cache: "no-store" }),
+      fetch(CANDIDATE_DATA_URL, { cache: "no-store" }),
       fetch(COUNTY_DATA_URL, { cache: "no-store" })
     ]);
     if (!propertyResponse.ok) throw new Error(`Property database returned HTTP ${propertyResponse.status}.`);
+    if (!candidateResponse.ok) throw new Error(`Candidate database returned HTTP ${candidateResponse.status}.`);
     if (!countyResponse.ok) throw new Error(`County database returned HTTP ${countyResponse.status}.`);
     const propertyData = await propertyResponse.json();
+    const candidateData = await candidateResponse.json();
     const countyData = await countyResponse.json();
-    properties = propertyData.properties || [];
+    properties = [...(propertyData.properties || []), ...(candidateData.properties || [])];
     counties = countyData.counties || {};
     if (!properties.length) throw new Error("No properties found in the database.");
     renderMetrics(propertyData);
