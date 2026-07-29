@@ -6,6 +6,7 @@ let properties = [];
 let counties = {};
 let markers = new Map();
 let activePropertyId = null;
+let openAccordionSection = "overview";
 
 function formatCurrency(value) {
   return new Intl.NumberFormat("en-US", {
@@ -19,15 +20,23 @@ function verdictClass(verdict) {
   return verdict === "PURSUE" ? "verdict-pursue" : verdict === "PASS" ? "verdict-pass" : "verdict-investigate";
 }
 
-function buildFact(label, value) {
-  return `<div class="fact"><small>${label}</small><strong>${value}</strong></div>`;
-}
-
 function calculateConfidence(verification) {
   const checks = Object.values(verification || {});
   if (!checks.length) return 0;
-  const completed = checks.filter(Boolean).length;
-  return Math.round((completed / checks.length) * 100);
+  return Math.round((checks.filter(Boolean).length / checks.length) * 100);
+}
+
+function statusClass(property, section) {
+  const confidence = calculateConfidence(property.verification);
+  if (section === "overview") return property.verdict === "PASS" ? "status-red" : property.verdict === "PURSUE" ? "status-green" : "status-amber";
+  if (section === "reality") {
+    if (property.verdict === "PASS") return "status-red";
+    if (property.moneyToday === "YES" || confidence >= 75) return "status-green";
+    return "status-amber";
+  }
+  if (section === "county") return counties[property.county] ? "status-green" : "status-amber";
+  if ((property.realityCheck?.dealKillers || []).length >= 2) return "status-red";
+  return confidence >= 50 ? "status-green" : "status-amber";
 }
 
 function renderMetrics(data) {
@@ -43,111 +52,116 @@ function renderMetrics(data) {
 
 function renderQueue() {
   const queue = document.getElementById("opportunity-queue");
-  queue.innerHTML = properties.slice().sort((a, b) => b.score - a.score).map(property => `
-    <button class="queue-item ${property.id === activePropertyId ? "active" : ""}" data-property-id="${property.id}">
-      <span class="queue-status ${verdictClass(property.verdict)}"></span>
-      <span class="queue-copy"><strong>${property.codename}</strong><small>${property.county} County · ${property.acres} acres · ${formatCurrency(property.price)}</small></span>
-      <span class="queue-score">${property.score}</span>
-    </button>
-  `).join("");
+  queue.innerHTML = properties.slice().sort((a, b) => b.score - a.score).map(property => {
+    const confidence = calculateConfidence(property.verification);
+    return `
+      <button class="queue-item ${property.id === activePropertyId ? "active" : ""}" data-property-id="${property.id}">
+        <span class="queue-status ${verdictClass(property.verdict)}"></span>
+        <span class="queue-copy"><strong>${property.codename}</strong><small>${property.county} County · ${property.acres} acres · ${formatCurrency(property.price)}</small></span>
+        <span class="queue-score-pair"><strong>${property.score}</strong><small><b>${confidence}%</b> known</small></span>
+      </button>`;
+  }).join("");
   queue.querySelectorAll(".queue-item").forEach(button => button.addEventListener("click", () => selectProperty(button.dataset.propertyId)));
 }
 
-function renderCountyIntelligence(property) {
-  const county = counties[property.county];
-  const panel = document.getElementById("county-intelligence");
-  if (!county) {
-    panel.innerHTML = `<div class="county-head"><div><div class="eyebrow">County intelligence</div><h2>${property.county} County profile pending</h2></div><span class="county-badge">RESEARCH PENDING</span></div><div class="county-note">No county profile has been added yet. Property zoning remains unverified.</div>`;
-    return;
-  }
-
-  panel.innerHTML = `
-    <div class="county-head">
-      <div><div class="eyebrow">County intelligence</div><h2>${county.name}</h2><small>Official-source profile last verified ${county.lastVerified}</small></div>
-      <span class="county-badge">OFFICIAL SOURCES</span>
-    </div>
-    <div class="county-grid">
-      <div class="county-card">
-        <h3>Planning & zoning</h3>
-        <p><strong>Phone:</strong> ${county.planningPhone}</p>
-        <p><strong>Email:</strong> ${county.planningEmail}</p>
-        <p><strong>Hours:</strong> ${county.planningHours}</p>
-        <p><strong>Office:</strong> ${county.planningAddress}</p>
-      </div>
-      <div class="county-card">
-        <h3>Research tools</h3>
-        <p>${county.intelligenceStatus}</p>
-        <div class="county-links">
-          <a class="county-link" href="${county.gisUrl}" target="_blank" rel="noopener">GIS / LAND USE</a>
-          <a class="county-link" href="${county.propertySearchUrl}" target="_blank" rel="noopener">PROPERTY SEARCH</a>
-          <a class="county-link" href="${county.landDevelopmentCodeUrl}" target="_blank" rel="noopener">LAND CODE</a>
-          <a class="county-link" href="${county.comprehensivePlanUrl}" target="_blank" rel="noopener">COMP PLAN</a>
-          <a class="county-link" href="${county.zoningDeterminationUrl}" target="_blank" rel="noopener">VERIFY ZONING</a>
-        </div>
-      </div>
-    </div>
-    <div class="county-note"><strong>Reality Check:</strong> ${county.verificationNote}</div>
-  `;
+function renderList(items, ordered = false) {
+  const tag = ordered ? "ol" : "ul";
+  return `<${tag}>${(items || []).map(item => `<li>${item}</li>`).join("")}</${tag}>`;
 }
 
-function renderList(items, itemClass) {
-  return items.map(item => `<li class="${itemClass}">${item}</li>`).join("");
-}
-
-function renderRealityCheck(property) {
+function overviewContent(property) {
   const confidence = calculateConfidence(property.verification);
-  const check = property.realityCheck;
-  const panel = document.querySelector(".flags");
-  panel.className = `flags reality-check ${verdictClass(property.verdict)}`;
+  return `
+    <div class="overview-head">
+      <div><h2>${property.codename}</h2><div class="overview-location">${property.name}<br>${property.address} · ${property.city}, ${property.state} · ${property.county} County</div></div>
+      <div class="overview-score">${property.score}</div>
+    </div>
+    <div class="overview-price">${formatCurrency(property.price)}</div>
+    <div class="overview-subprice">${property.acres} acres · approximately ${formatCurrency(Math.round(property.price / property.acres))} per acre</div>
+    <div class="overview-decision"><strong>${property.verdict}: Would we spend our own money today?</strong><br>${property.moneyToday}</div>
+    <div class="overview-meters"><div class="overview-meter"><small>Opportunity</small><strong>${property.score}/100</strong></div><div class="overview-meter"><small>Confidence</small><strong>${confidence}%</strong></div></div>
+    <div class="compact-actions"><a class="btn primary" href="${property.links.listing}" target="_blank" rel="noopener">OPEN LISTING</a><a class="btn secondary" href="${property.links.googleMaps}" target="_blank" rel="noopener">GOOGLE MAPS</a></div>`;
+}
+
+function realityContent(property) {
+  const confidence = calculateConfidence(property.verification);
+  const check = property.realityCheck || { confirmed: [], unknowns: [], dealKillers: [], nextActions: [] };
+  return `
+    <div class="flags reality-check ${verdictClass(property.verdict)}">
+      <div class="reality-header"><div><div class="reality-kicker">Reality Check</div><h3>Would we spend our own money today?</h3><div class="money-answer">${property.moneyToday}</div></div>
+      <div class="reality-scores"><div><small>Opportunity</small><strong>${property.score}</strong><span>/100</span></div><div><small>Confidence</small><strong>${confidence}</strong><span>%</span></div></div></div>
+      <div class="confidence-wrap"><div class="confidence-label"><span>Due diligence completed</span><strong>${confidence}%</strong></div><div class="confidence-track"><span style="width:${confidence}%"></span></div></div>
+      <div class="reality-grid">
+        <section class="reality-section confirmed"><h4>Confirmed</h4>${renderList(check.confirmed)}</section>
+        <section class="reality-section unknowns"><h4>Unknowns</h4>${renderList(check.unknowns)}</section>
+        <section class="reality-section killers"><h4>Deal Killers</h4>${renderList(check.dealKillers)}</section>
+        <section class="reality-section actions-list"><h4>Next Three Actions</h4>${renderList(check.nextActions, true)}</section>
+      </div>
+    </div>`;
+}
+
+function countyContent(property) {
+  const county = counties[property.county];
+  if (!county) return `<div class="county-note-compact">${property.county} County profile has not been added yet. Zoning remains unverified.</div>`;
+  return `
+    <div class="county-compact">
+      <div class="county-contact"><h3>${county.name} Planning & Zoning</h3><p><strong>Phone:</strong> ${county.planningPhone}</p><p><strong>Email:</strong> ${county.planningEmail}</p><p><strong>Hours:</strong> ${county.planningHours}</p><p><strong>Office:</strong> ${county.planningAddress}</p></div>
+      <div class="county-links-compact"><a href="${county.gisUrl}" target="_blank" rel="noopener">GIS / LAND USE</a><a href="${county.propertySearchUrl}" target="_blank" rel="noopener">PROPERTY SEARCH</a><a href="${county.landDevelopmentCodeUrl}" target="_blank" rel="noopener">LAND CODE</a><a href="${county.comprehensivePlanUrl}" target="_blank" rel="noopener">COMP PLAN</a><a href="${county.zoningDeterminationUrl}" target="_blank" rel="noopener">VERIFY ZONING</a></div>
+      <div class="county-note-compact"><strong>Official-source profile last verified ${county.lastVerified}.</strong><br>${county.verificationNote}</div>
+    </div>`;
+}
+
+function detailsContent(property) {
+  return `
+    <div class="compact-facts">
+      <div class="compact-fact"><small>Research stage</small><strong>${property.researchStage}</strong></div>
+      <div class="compact-fact"><small>Buildability</small><strong>${property.buildability}</strong></div>
+      <div class="compact-fact"><small>Zoning</small><strong>${property.zoning}</strong></div>
+      <div class="compact-fact"><small>Waterfront</small><strong>${property.waterfront}</strong></div>
+      <div class="compact-fact"><small>Flood zone</small><strong>${property.floodZone}</strong></div>
+      <div class="compact-fact"><small>Utilities</small><strong>${property.utilities}</strong></div>
+      <div class="compact-fact"><small>Destination</small><strong>${property.destinationScore}/100</strong></div>
+      <div class="compact-fact"><small>Operations</small><strong>${property.operationsScore}/100</strong></div>
+      <div class="compact-fact"><small>Expansion</small><strong>${property.expansionScore}/100</strong></div>
+      <div class="compact-fact"><small>Location accuracy</small><strong>${property.locationAccuracy}</strong></div>
+    </div>`;
+}
+
+function accordionItem(id, title, subtitle, status, content) {
+  const open = openAccordionSection === id;
+  return `
+    <section class="accordion-item ${open ? "open" : ""}" data-section="${id}">
+      <button class="accordion-trigger" type="button" aria-expanded="${open}" data-section="${id}">
+        <span class="accordion-indicator ${status}"></span>
+        <span class="accordion-title"><strong>${title}</strong><small>${subtitle}</small></span>
+        <span class="accordion-chevron">›</span>
+      </button>
+      <div class="accordion-content"><div class="accordion-content-inner"><div class="accordion-body">${content}</div></div></div>
+    </section>`;
+}
+
+function renderIntelligencePanel(property) {
+  const panel = document.getElementById("intelligence-panel");
   panel.innerHTML = `
-    <div class="reality-header">
-      <div>
-        <div class="reality-kicker">Reality Check</div>
-        <h3>Would we spend our own money today?</h3>
-        <div class="money-answer">${property.moneyToday}</div>
-      </div>
-      <div class="reality-scores">
-        <div><small>Opportunity</small><strong>${property.score}</strong><span>/100</span></div>
-        <div><small>Confidence</small><strong>${confidence}</strong><span>%</span></div>
-      </div>
-    </div>
-    <div class="confidence-wrap">
-      <div class="confidence-label"><span>Due diligence completed</span><strong>${confidence}%</strong></div>
-      <div class="confidence-track"><span style="width:${confidence}%"></span></div>
-    </div>
-    <div class="reality-grid">
-      <section class="reality-section confirmed"><h4>Confirmed</h4><ul>${renderList(check.confirmed, "confirmed-item")}</ul></section>
-      <section class="reality-section unknowns"><h4>Unknowns</h4><ul>${renderList(check.unknowns, "unknown-item")}</ul></section>
-      <section class="reality-section killers"><h4>Deal Killers</h4><ul>${renderList(check.dealKillers, "killer-item")}</ul></section>
-      <section class="reality-section actions-list"><h4>Next Three Actions</h4><ol>${check.nextActions.map(item => `<li>${item}</li>`).join("")}</ol></section>
-    </div>
-  `;
+    <div class="intelligence-shell">
+      ${accordionItem("overview", "Overview", `${property.verdict} · ${property.score}/100 opportunity`, statusClass(property, "overview"), overviewContent(property))}
+      ${accordionItem("reality", "Reality Check", `${calculateConfidence(property.verification)}% due diligence complete`, statusClass(property, "reality"), realityContent(property))}
+      ${accordionItem("county", "County Intelligence", counties[property.county] ? `${property.county} official-source profile` : "Profile pending", statusClass(property, "county"), countyContent(property))}
+      ${accordionItem("details", "Property Details", "Zoning, utilities, flood and expansion", statusClass(property, "details"), detailsContent(property))}
+    </div>`;
+  panel.querySelectorAll(".accordion-trigger").forEach(trigger => {
+    trigger.addEventListener("click", () => {
+      openAccordionSection = trigger.dataset.section;
+      renderIntelligencePanel(property);
+    });
+  });
 }
 
 function renderProperty(property) {
   activePropertyId = property.id;
+  openAccordionSection = "overview";
   renderQueue();
-  renderCountyIntelligence(property);
-  document.querySelector(".rank span").textContent = `${property.id} · ${property.researchStage}`;
-  document.querySelector(".score").textContent = property.score;
-  document.querySelector(".panel h2").textContent = `${property.codename} — ${property.name}`;
-  document.querySelector(".location").textContent = `${property.address} · ${property.city}, ${property.state} · ${property.county} County`;
-  document.querySelector(".price").textContent = formatCurrency(property.price);
-  document.querySelector(".subprice").textContent = `${property.acres} acres · approximately ${formatCurrency(Math.round(property.price / property.acres))} per acre`;
-  document.querySelector(".verdict").className = `verdict ${verdictClass(property.verdict)}`;
-  document.querySelector(".verdict").innerHTML = `<strong>${property.verdict}: Can we build what we want here?</strong><br>${property.summary}`;
-  document.querySelector(".grid").innerHTML = [
-    buildFact("Buildability", property.buildability),
-    buildFact("Zoning", property.zoning),
-    buildFact("Waterfront", property.waterfront),
-    buildFact("Flood zone", property.floodZone),
-    buildFact("Utilities", property.utilities),
-    buildFact("Expansion", `${property.expansionScore}/100`)
-  ].join("");
-  renderRealityCheck(property);
-  const actionLinks = document.querySelectorAll(".actions a");
-  actionLinks[0].href = property.links.listing;
-  actionLinks[1].href = property.links.googleMaps;
+  renderIntelligencePanel(property);
   const marker = markers.get(property.id);
   if (marker) {
     window.joeVisionMap.setView(marker.getLatLng(), 8, { animate: true });
@@ -163,7 +177,7 @@ function selectProperty(propertyId) {
 function addMarkers() {
   const bounds = [];
   properties.forEach(property => {
-    const icon = L.divIcon({className: "custom-pin", html: `<div class="pin"><span>${property.score}</span></div>`, iconSize: [48, 48], iconAnchor: [24, 46]});
+    const icon = L.divIcon({ className: "custom-pin", html: `<div class="pin"><span>${property.score}</span></div>`, iconSize: [48, 48], iconAnchor: [24, 46] });
     const marker = L.marker([property.latitude, property.longitude], { icon }).addTo(window.joeVisionMap);
     marker.bindPopup(`<strong>${property.codename}</strong><br>${property.name}<br>${formatCurrency(property.price)} · ${property.acres} acres<br><em>${property.locationAccuracy}</em>`);
     marker.on("click", () => selectProperty(property.id));
@@ -192,7 +206,7 @@ async function initializeDashboard() {
   } catch (error) {
     console.error("JOE VISION initialization failed:", error);
     document.querySelector(".status").innerHTML = '<i class="dot red"></i> INTELLIGENCE DATABASE OFFLINE';
-    document.querySelector(".verdict").innerHTML = `<strong>Dashboard error:</strong> ${error.message}`;
+    document.getElementById("intelligence-panel").innerHTML = `<div class="verdict"><strong>Dashboard error:</strong> ${error.message}</div>`;
   }
 }
 
