@@ -1,6 +1,9 @@
 "use strict";
 
 const DATA_URL = "data/properties.json";
+let properties = [];
+let markers = new Map();
+let activePropertyId = null;
 
 function formatCurrency(value) {
   return new Intl.NumberFormat("en-US", {
@@ -14,17 +17,15 @@ function severityClass(severity) {
   return severity === "critical" ? "red" : severity === "warning" ? "amber" : "green";
 }
 
+function verdictClass(verdict) {
+  return verdict === "PURSUE" ? "verdict-pursue" : verdict === "PASS" ? "verdict-pass" : "verdict-investigate";
+}
+
 function buildFact(label, value) {
   return `<div class="fact"><small>${label}</small><strong>${value}</strong></div>`;
 }
 
-function renderDashboard(data) {
-  const properties = data.properties || [];
-  if (!properties.length) {
-    throw new Error("No properties found in the database.");
-  }
-
-  const property = properties[0];
+function renderMetrics(data) {
   const totalAcres = properties.reduce((sum, item) => sum + Number(item.acres || 0), 0);
   const totalValue = properties.reduce((sum, item) => sum + Number(item.price || 0), 0);
 
@@ -34,6 +35,32 @@ function renderDashboard(data) {
     ? `$${(totalValue / 1000000).toFixed(1)}M`
     : `$${Math.round(totalValue / 1000)}K`;
   document.querySelector(".metric:nth-child(4) b").textContent = data.metadata.countiesInScope;
+}
+
+function renderQueue() {
+  const queue = document.getElementById("opportunity-queue");
+  queue.innerHTML = properties
+    .slice()
+    .sort((a, b) => b.score - a.score)
+    .map(property => `
+      <button class="queue-item ${property.id === activePropertyId ? "active" : ""}" data-property-id="${property.id}">
+        <span class="queue-status ${verdictClass(property.verdict)}"></span>
+        <span class="queue-copy">
+          <strong>${property.codename}${property.isSample ? " <em>TEST</em>" : ""}</strong>
+          <small>${property.county} County · ${property.acres} acres · ${formatCurrency(property.price)}</small>
+        </span>
+        <span class="queue-score">${property.score}</span>
+      </button>
+    `).join("");
+
+  queue.querySelectorAll(".queue-item").forEach(button => {
+    button.addEventListener("click", () => selectProperty(button.dataset.propertyId));
+  });
+}
+
+function renderProperty(property) {
+  activePropertyId = property.id;
+  renderQueue();
 
   document.querySelector(".rank span").textContent = `${property.id} · ${property.researchStage}`;
   document.querySelector(".score").textContent = property.score;
@@ -41,6 +68,7 @@ function renderDashboard(data) {
   document.querySelector(".location").textContent = `${property.address} · ${property.city}, ${property.state} · ${property.county} County`;
   document.querySelector(".price").textContent = formatCurrency(property.price);
   document.querySelector(".subprice").textContent = `${property.acres} acres · approximately ${formatCurrency(Math.round(property.price / property.acres))} per acre`;
+  document.querySelector(".verdict").className = `verdict ${verdictClass(property.verdict)}`;
   document.querySelector(".verdict").innerHTML = `<strong>${property.verdict}: Can we build what we want here?</strong><br>${property.summary}`;
 
   document.querySelector(".grid").innerHTML = [
@@ -61,34 +89,60 @@ function renderDashboard(data) {
 
   const actionLinks = document.querySelectorAll(".actions a");
   actionLinks[0].href = property.links.listing;
+  actionLinks[0].classList.toggle("disabled", property.links.listing === "#");
   actionLinks[1].href = property.links.googleMaps;
 
-  const icon = L.divIcon({
-    className: "custom-pin",
-    html: `<div class="pin"><span>${property.score}</span></div>`,
-    iconSize: [48, 48],
-    iconAnchor: [24, 46]
+  const marker = markers.get(property.id);
+  if (marker) {
+    window.joeVisionMap.setView(marker.getLatLng(), 8, { animate: true });
+    marker.openPopup();
+  }
+}
+
+function selectProperty(propertyId) {
+  const property = properties.find(item => item.id === propertyId);
+  if (property) renderProperty(property);
+}
+
+function addMarkers() {
+  const bounds = [];
+  properties.forEach(property => {
+    const icon = L.divIcon({
+      className: "custom-pin",
+      html: `<div class="pin ${property.isSample ? "pin-sample" : ""}"><span>${property.score}</span></div>`,
+      iconSize: [48, 48],
+      iconAnchor: [24, 46]
+    });
+
+    const marker = L.marker([property.latitude, property.longitude], { icon }).addTo(window.joeVisionMap);
+    marker.bindPopup(`
+      <strong>${property.codename}${property.isSample ? " (TEST)" : ""}</strong><br>
+      ${property.name}<br>
+      ${formatCurrency(property.price)} · ${property.acres} acres<br>
+      <em>${property.locationAccuracy}</em>
+    `);
+    marker.on("click", () => selectProperty(property.id));
+    markers.set(property.id, marker);
+    bounds.push([property.latitude, property.longitude]);
   });
 
-  const marker = L.marker([property.latitude, property.longitude], { icon }).addTo(window.joeVisionMap);
-  marker.bindPopup(`
-    <strong>${property.codename}</strong><br>
-    ${property.name}<br>
-    ${formatCurrency(property.price)} · ${property.acres} acres<br>
-    <em>${property.locationAccuracy}</em>
-  `).openPopup();
-
-  window.joeVisionMap.setView([property.latitude, property.longitude], 8);
+  if (bounds.length > 1) {
+    window.joeVisionMap.fitBounds(bounds, { padding: [50, 50] });
+  }
 }
 
 async function initializeDashboard() {
   try {
     const response = await fetch(DATA_URL, { cache: "no-store" });
-    if (!response.ok) {
-      throw new Error(`Property database returned HTTP ${response.status}.`);
-    }
+    if (!response.ok) throw new Error(`Property database returned HTTP ${response.status}.`);
+
     const data = await response.json();
-    renderDashboard(data);
+    properties = data.properties || [];
+    if (!properties.length) throw new Error("No properties found in the database.");
+
+    renderMetrics(data);
+    addMarkers();
+    selectProperty(properties.slice().sort((a, b) => b.score - a.score)[0].id);
   } catch (error) {
     console.error("JOE VISION initialization failed:", error);
     document.querySelector(".status").innerHTML = '<i class="dot red"></i> PROPERTY DATABASE OFFLINE';
