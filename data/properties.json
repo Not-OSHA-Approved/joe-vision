@@ -1,0 +1,78 @@
+{
+  "metadata": {
+    "project": "JOE VISION",
+    "version": "0.2.0",
+    "updated": "2026-07-29",
+    "countiesInScope": 15
+  },
+  "properties": [
+    {
+      "id": "JV-001",
+      "codename": "River Run",
+      "name": "Withlacoochee River PUD",
+      "address": "00 W Highway 40",
+      "city": "Dunnellon",
+      "state": "FL",
+      "zip": "34431",
+      "county": "Marion",
+      "latitude": 29.05,
+      "longitude": -82.52,
+      "locationAccuracy": "Approximate pending parcel GIS verification",
+      "listingStatus": "Active",
+      "researchStage": "Verification Stage",
+      "price": 459000,
+      "previousPrice": 575000,
+      "acres": 9.63,
+      "zoning": "PUD — unverified scope",
+      "waterfront": "723 ft river frontage",
+      "floodZone": "AE reported",
+      "utilities": "No public water / no public sewer reported",
+      "verdict": "INVESTIGATE",
+      "buildability": "MAYBE",
+      "score": 76,
+      "destinationScore": 91,
+      "operationsScore": 67,
+      "expansionScore": 48,
+      "summary": "Rare riverfront acreage with advertised PUD zoning and strong Old Florida recreational appeal. The opportunity is real; legal access, buildable acreage, utilities, and the controlling PUD documents decide whether it can become a clean destination fish camp or merely very attractive wet dirt.",
+      "fit": {
+        "oldFloridaDestination": "Strong",
+        "naturalAmenities": [
+          "Withlacoochee River frontage",
+          "Fishing and boating",
+          "Kayaking",
+          "Nature-based tourism"
+        ],
+        "lowMaintenanceConcept": "Strong if the waterfront is usable and commercial access is workable",
+        "phasedDevelopment": "Limited by total acreage and environmental constraints"
+      },
+      "criticalDueDiligence": [
+        {
+          "severity": "critical",
+          "text": "Confirm legal and commercial access; listing directions reference an easement and entry from Kennesaw Road."
+        },
+        {
+          "severity": "critical",
+          "text": "Determine buildable acreage after AE floodplain, wetlands, setbacks, stormwater, and river-buffer requirements."
+        },
+        {
+          "severity": "warning",
+          "text": "Obtain the controlling PUD ordinance or development order and written confirmation that the intended RV destination use is permitted."
+        },
+        {
+          "severity": "warning",
+          "text": "Price commercial well, wastewater treatment, or septic feasibility before assigning a realistic site count."
+        }
+      ],
+      "nextActions": [
+        "Call Marion County planning and request the controlling PUD documents",
+        "Confirm parcel identification and legal commercial access",
+        "Order a wetlands and floodplain desktop review",
+        "Get preliminary water and wastewater feasibility guidance"
+      ],
+      "links": {
+        "listing": "https://www.zillow.com/homedetails/0-W-Highway-40-Dunnellon-FL-34431/2076588137_zpid/",
+        "googleMaps": "https://www.google.com/maps/search/?api=1&query=00+W+Highway+40+Dunnellon+FL+34431"
+      }
+    }
+  ]
+}
