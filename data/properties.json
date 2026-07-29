@@ -1,7 +1,7 @@
 {
   "metadata": {
     "project": "JOE VISION",
-    "version": "0.2.0",
+    "version": "0.3.0",
     "updated": "2026-07-29",
     "countiesInScope": 15
   },
@@ -13,13 +13,13 @@
       "address": "00 W Highway 40",
       "city": "Dunnellon",
       "state": "FL",
-      "zip": "34431",
       "county": "Marion",
       "latitude": 29.05,
       "longitude": -82.52,
       "locationAccuracy": "Approximate pending parcel GIS verification",
       "listingStatus": "Active",
       "researchStage": "Verification Stage",
+      "isSample": false,
       "price": 459000,
       "previousPrice": 575000,
       "acres": 9.63,
@@ -33,45 +33,91 @@
       "destinationScore": 91,
       "operationsScore": 67,
       "expansionScore": 48,
-      "summary": "Rare riverfront acreage with advertised PUD zoning and strong Old Florida recreational appeal. The opportunity is real; legal access, buildable acreage, utilities, and the controlling PUD documents decide whether it can become a clean destination fish camp or merely very attractive wet dirt.",
-      "fit": {
-        "oldFloridaDestination": "Strong",
-        "naturalAmenities": [
-          "Withlacoochee River frontage",
-          "Fishing and boating",
-          "Kayaking",
-          "Nature-based tourism"
-        ],
-        "lowMaintenanceConcept": "Strong if the waterfront is usable and commercial access is workable",
-        "phasedDevelopment": "Limited by total acreage and environmental constraints"
-      },
+      "summary": "Rare riverfront acreage with advertised PUD zoning and strong Old Florida recreational appeal. Legal access, buildable acreage, utilities, and the controlling PUD documents decide whether it can become a clean destination fish camp or merely very attractive wet dirt.",
       "criticalDueDiligence": [
-        {
-          "severity": "critical",
-          "text": "Confirm legal and commercial access; listing directions reference an easement and entry from Kennesaw Road."
-        },
-        {
-          "severity": "critical",
-          "text": "Determine buildable acreage after AE floodplain, wetlands, setbacks, stormwater, and river-buffer requirements."
-        },
-        {
-          "severity": "warning",
-          "text": "Obtain the controlling PUD ordinance or development order and written confirmation that the intended RV destination use is permitted."
-        },
-        {
-          "severity": "warning",
-          "text": "Price commercial well, wastewater treatment, or septic feasibility before assigning a realistic site count."
-        }
-      ],
-      "nextActions": [
-        "Call Marion County planning and request the controlling PUD documents",
-        "Confirm parcel identification and legal commercial access",
-        "Order a wetlands and floodplain desktop review",
-        "Get preliminary water and wastewater feasibility guidance"
+        {"severity": "critical", "text": "Confirm legal and commercial access; listing directions reference an easement and entry from Kennesaw Road."},
+        {"severity": "critical", "text": "Determine buildable acreage after AE floodplain, wetlands, setbacks, stormwater, and river-buffer requirements."},
+        {"severity": "warning", "text": "Obtain the controlling PUD ordinance or development order and written confirmation that the intended RV destination use is permitted."},
+        {"severity": "warning", "text": "Price commercial well, wastewater treatment, or septic feasibility before assigning a realistic site count."}
       ],
       "links": {
         "listing": "https://www.zillow.com/homedetails/0-W-Highway-40-Dunnellon-FL-34431/2076588137_zpid/",
         "googleMaps": "https://www.google.com/maps/search/?api=1&query=00+W+Highway+40+Dunnellon+FL+34431"
+      }
+    },
+    {
+      "id": "JV-T02",
+      "codename": "Spring Base",
+      "name": "Interface Test Property",
+      "address": "Sample location",
+      "city": "Weeki Wachee",
+      "state": "FL",
+      "county": "Hernando",
+      "latitude": 28.515,
+      "longitude": -82.575,
+      "locationAccuracy": "TEST DATA — not a real listing",
+      "listingStatus": "Sample",
+      "researchStage": "Interface Test",
+      "isSample": true,
+      "price": 389000,
+      "previousPrice": null,
+      "acres": 24.5,
+      "zoning": "TEST — entitlement plausible",
+      "waterfront": "Near springs and river access",
+      "floodZone": "TEST — mixed risk",
+      "utilities": "TEST — utilities nearby",
+      "verdict": "PURSUE",
+      "buildability": "LIKELY",
+      "score": 92,
+      "destinationScore": 96,
+      "operationsScore": 88,
+      "expansionScore": 91,
+      "summary": "Sample record used to test a high-ranking, large-acreage Old Florida destination opportunity. This is not an actual property and must not be treated as a listing.",
+      "criticalDueDiligence": [
+        {"severity": "warning", "text": "TEST RECORD: confirm zoning and future land use."},
+        {"severity": "warning", "text": "TEST RECORD: verify utility capacity and road access."}
+      ],
+      "links": {
+        "listing": "#",
+        "googleMaps": "https://www.google.com/maps/search/?api=1&query=Weeki+Wachee+FL"
+      }
+    },
+    {
+      "id": "JV-T03",
+      "codename": "Gulf Hammock",
+      "name": "Interface Test Property",
+      "address": "Sample location",
+      "city": "Inglis",
+      "state": "FL",
+      "county": "Levy",
+      "latitude": 29.03,
+      "longitude": -82.67,
+      "locationAccuracy": "TEST DATA — not a real listing",
+      "listingStatus": "Sample",
+      "researchStage": "Interface Test",
+      "isSample": true,
+      "price": 249000,
+      "previousPrice": null,
+      "acres": 41.0,
+      "zoning": "TEST — uncertain",
+      "waterfront": "None confirmed",
+      "floodZone": "TEST — high concern",
+      "utilities": "TEST — costly extension likely",
+      "verdict": "PASS",
+      "buildability": "UNLIKELY",
+      "score": 43,
+      "destinationScore": 62,
+      "operationsScore": 39,
+      "expansionScore": 70,
+      "summary": "Sample record used to prove that cheap acreage can still be a poor opportunity when flood exposure, utilities, access, and entitlement risk overwhelm the purchase price.",
+      "criticalDueDiligence": [
+        {"severity": "critical", "text": "TEST RECORD: flood and wetlands may consume much of the tract."},
+        {"severity": "critical", "text": "TEST RECORD: no confirmed commercial access or utility path."},
+        {"severity": "warning", "text": "Low price alone does not make this a viable destination."}
+      ],
+      "links": {
+        "listing": "#",
+        "googleMaps": "https://www.google.com/maps/search/?api=1&query=Inglis+FL"
       }
     }
   ]
