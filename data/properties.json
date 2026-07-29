@@ -1,7 +1,7 @@
 {
   "metadata": {
     "project": "JOE VISION",
-    "version": "0.3.1",
+    "version": "0.5.0",
     "updated": "2026-07-29",
     "countiesInScope": 15
   },
@@ -19,7 +19,6 @@
       "locationAccuracy": "Approximate pending parcel GIS verification",
       "listingStatus": "Active",
       "researchStage": "Verification Stage",
-      "isSample": false,
       "price": 459000,
       "previousPrice": 575000,
       "acres": 9.63,
@@ -28,18 +27,51 @@
       "floodZone": "AE reported",
       "utilities": "No public water / no public sewer reported",
       "verdict": "INVESTIGATE",
+      "moneyToday": "NOT YET",
       "buildability": "MAYBE",
       "score": 76,
       "destinationScore": 91,
       "operationsScore": 67,
       "expansionScore": 48,
       "summary": "Rare riverfront acreage with advertised PUD zoning and strong Old Florida recreational appeal. Legal access, buildable acreage, utilities, and the controlling PUD documents decide whether it can become a clean destination fish camp or merely very attractive wet dirt.",
-      "criticalDueDiligence": [
-        {"severity": "critical", "text": "Confirm legal and commercial access; listing directions reference an easement and entry from Kennesaw Road."},
-        {"severity": "critical", "text": "Determine buildable acreage after AE floodplain, wetlands, setbacks, stormwater, and river-buffer requirements."},
-        {"severity": "warning", "text": "Obtain the controlling PUD ordinance or development order and written confirmation that the intended RV destination use is permitted."},
-        {"severity": "warning", "text": "Price commercial well, wastewater treatment, or septic feasibility before assigning a realistic site count."}
-      ],
+      "realityCheck": {
+        "confirmed": [
+          "Asking price is within the $500,000 land budget.",
+          "Listing reports 9.63 acres and substantial Withlacoochee River frontage.",
+          "The location has strong fishing, boating, and Old Florida destination appeal."
+        ],
+        "unknowns": [
+          "What uses are actually authorized by the controlling PUD documents?",
+          "How many acres remain buildable after floodplain, wetlands, buffers, and stormwater?",
+          "Can commercial water and wastewater needs be met economically?",
+          "Is the existing access legally sufficient for a commercial RV destination?"
+        ],
+        "dealKillers": [
+          "RV or campground use is prohibited by the PUD or future land-use designation.",
+          "Environmental constraints leave too little usable acreage for a viable first phase.",
+          "Commercial access cannot be permitted or legally secured.",
+          "Water and wastewater costs overwhelm the site's revenue potential."
+        ],
+        "nextActions": [
+          "Request the controlling PUD ordinance and written use determination from Marion County.",
+          "Confirm parcel ID, legal access, and commercial entrance requirements.",
+          "Order a desktop wetlands, floodplain, and buildable-acreage review."
+        ]
+      },
+      "verification": {
+        "listingReviewed": true,
+        "parcelIdentified": false,
+        "countyGisReviewed": false,
+        "zoningVerified": false,
+        "futureLandUseVerified": false,
+        "floodReviewed": true,
+        "wetlandsReviewed": false,
+        "accessVerified": false,
+        "utilitiesConfirmed": false,
+        "planningContacted": false,
+        "developmentOrderObtained": false,
+        "siteVisited": false
+      },
       "links": {
         "listing": "https://www.zillow.com/homedetails/0-W-Highway-40-Dunnellon-FL-34431/2076588137_zpid/",
         "googleMaps": "https://www.google.com/maps/search/?api=1&query=00+W+Highway+40+Dunnellon+FL+34431"
@@ -58,7 +90,6 @@
       "locationAccuracy": "Approximate marker pending parcel GIS verification",
       "listingStatus": "Active",
       "researchStage": "Preliminary Screen",
-      "isSample": false,
       "price": 249500,
       "previousPrice": null,
       "acres": 40.01,
@@ -67,18 +98,50 @@
       "floodZone": "Unknown",
       "utilities": "Well, septic, electric, and one RV hookup reported",
       "verdict": "INVESTIGATE",
+      "moneyToday": "NOT YET",
       "buildability": "MAYBE",
       "score": 81,
       "destinationScore": 65,
       "operationsScore": 83,
       "expansionScore": 88,
       "summary": "Large, inexpensive tract with existing well, septic, electric, pole barn, bathhouse, and RV hookup. It lacks a confirmed natural destination draw, but it offers one of the cheapest phased-start platforms currently in the queue.",
-      "criticalDueDiligence": [
-        {"severity": "critical", "text": "Confirm whether commercial RV campground or destination use is permitted or realistically approvable."},
-        {"severity": "warning", "text": "Verify floodplain, wetlands, soils, and usable acreage before assuming the full 40 acres can be developed."},
-        {"severity": "warning", "text": "Determine whether the existing well and septic can support anything beyond private recreational use."},
-        {"severity": "warning", "text": "Evaluate whether nearby attractions and traffic can support a destination business rather than a hunting camp."}
-      ],
+      "realityCheck": {
+        "confirmed": [
+          "The asking price leaves substantially more capital for phased construction.",
+          "The listing reports existing well, septic, electric, bathhouse, pole barn, and an RV hookup.",
+          "Forty acres provides strong expansion and layout flexibility."
+        ],
+        "unknowns": [
+          "Is commercial RV or campground use permitted or realistically approvable?",
+          "How much of the tract is suitable for roads, pads, stormwater, and wastewater?",
+          "Can the existing private utilities contribute to commercial development?",
+          "What experience would make guests choose this location rather than merely pass through?"
+        ],
+        "dealKillers": [
+          "County policy makes commercial campground approval unrealistic.",
+          "Soils, wetlands, or floodplain make commercial wastewater or site development impractical.",
+          "The surrounding demand cannot support a destination-oriented operation."
+        ],
+        "nextActions": [
+          "Verify parcel zoning, future land use, and campground approval path with Madison County.",
+          "Review flood, wetlands, soils, and usable acreage using county and environmental tools.",
+          "Determine the capacity and legal status of the existing well, septic, electric, and RV hookup."
+        ]
+      },
+      "verification": {
+        "listingReviewed": true,
+        "parcelIdentified": true,
+        "countyGisReviewed": false,
+        "zoningVerified": false,
+        "futureLandUseVerified": false,
+        "floodReviewed": false,
+        "wetlandsReviewed": false,
+        "accessVerified": false,
+        "utilitiesConfirmed": false,
+        "planningContacted": false,
+        "developmentOrderObtained": false,
+        "siteVisited": false
+      },
       "links": {
         "listing": "https://www.coldwellbanker.com/fl/madison/870-sw-san-pedro-rd/lid-P00800000HBCDX0EuLpIOrJFQDwMYSYahGNGmYFM",
         "googleMaps": "https://www.google.com/maps/search/?api=1&query=870+SW+San+Pedro+Road+Madison+FL+32340"
@@ -97,7 +160,6 @@
       "locationAccuracy": "Approximate marker pending parcel GIS verification",
       "listingStatus": "Active",
       "researchStage": "Preliminary Screen",
-      "isSample": false,
       "price": 350000,
       "previousPrice": null,
       "acres": 40.23,
@@ -106,18 +168,50 @@
       "floodZone": "Unknown; pond and lowland review required",
       "utilities": "Residence and farm utilities present; commercial capacity unknown",
       "verdict": "INVESTIGATE",
+      "moneyToday": "NOT YET",
       "buildability": "MAYBE",
       "score": 78,
       "destinationScore": 72,
       "operationsScore": 80,
       "expansionScore": 84,
       "summary": "Forty acres with mature oaks, pasture, ponds, an existing residence, and proximity to Madison and I-10. It has character and operational head-start potential, but the ponds, transmission corridor, easements, and commercial entitlement path need scrutiny.",
-      "criticalDueDiligence": [
-        {"severity": "critical", "text": "Confirm zoning, future land use, and whether transient RV or campground use is permitted or approvable."},
-        {"severity": "critical", "text": "Map ponds, wetlands, floodplain, transmission line impacts, and any tower or access easements."},
-        {"severity": "warning", "text": "Determine safe and commercially acceptable road access for large RVs."},
-        {"severity": "warning", "text": "Assess whether I-10 visibility and nearby recreation provide enough guest demand for the intended concept."}
-      ],
+      "realityCheck": {
+        "confirmed": [
+          "The tract is large enough for meaningful phased development.",
+          "The listing reports an existing residence, pasture, mature oaks, and multiple ponds.",
+          "Proximity to Madison and I-10 could simplify supplies, staffing, and regional access."
+        ],
+        "unknowns": [
+          "Are the ponds amenities, environmental constraints, or both?",
+          "What impacts do the transmission corridor and reported easements have on the site plan?",
+          "Can the road safely and legally support large-RV commercial traffic?",
+          "Is there enough nearby recreation and demand to create a memorable destination?"
+        ],
+        "dealKillers": [
+          "Ponds, wetlands, easements, and utility corridors fragment the usable acreage beyond practicality.",
+          "Commercial RV access cannot be safely permitted.",
+          "The county will not support the intended transient use."
+        ],
+        "nextActions": [
+          "Pull the parcel, zoning, future land use, easements, and utility-corridor information.",
+          "Map floodplain, wetlands, ponds, and likely usable development areas.",
+          "Ask Madison County about campground use and commercial entrance requirements."
+        ]
+      },
+      "verification": {
+        "listingReviewed": true,
+        "parcelIdentified": true,
+        "countyGisReviewed": false,
+        "zoningVerified": false,
+        "futureLandUseVerified": false,
+        "floodReviewed": false,
+        "wetlandsReviewed": false,
+        "accessVerified": false,
+        "utilitiesConfirmed": false,
+        "planningContacted": false,
+        "developmentOrderObtained": false,
+        "siteVisited": false
+      },
       "links": {
         "listing": "https://www.landwatch.com/madison-county-florida-farms-and-ranches-for-sale/pid/425902886",
         "googleMaps": "https://www.google.com/maps/search/?api=1&query=1914+SW+Jim+Clark+Road+Madison+FL+32340"
@@ -136,7 +230,6 @@
       "locationAccuracy": "Approximate marker pending parcel GIS verification",
       "listingStatus": "Active",
       "researchStage": "Preliminary Screen",
-      "isSample": false,
       "price": 450000,
       "previousPrice": 460000,
       "acres": 47.05,
@@ -145,18 +238,50 @@
       "floodZone": "Advertised high and dry; independent verification required",
       "utilities": "Residence and agricultural irrigation reported",
       "verdict": "INVESTIGATE",
+      "moneyToday": "NOT YET",
       "buildability": "MAYBE",
       "score": 79,
       "destinationScore": 63,
       "operationsScore": 79,
       "expansionScore": 93,
       "summary": "The largest tract in the current queue, advertised as high and dry with irrigated acreage and existing improvements. Strong expansion flexibility, but it needs a compelling destination story and a verified entitlement path before it outranks waterfront or recreation-driven sites.",
-      "criticalDueDiligence": [
-        {"severity": "critical", "text": "Confirm zoning and the likelihood of approval for a commercial RV destination or campground."},
-        {"severity": "warning", "text": "Independently verify the high-and-dry claim, wetlands, soils, and stormwater constraints."},
-        {"severity": "warning", "text": "Determine whether existing irrigation, well, septic, and power infrastructure can contribute to phased commercial development."},
-        {"severity": "warning", "text": "Identify a strong local attraction or experience capable of making this more than an overnight stop."}
-      ],
+      "realityCheck": {
+        "confirmed": [
+          "This is the largest current candidate at approximately 47 acres.",
+          "The listing reports existing residential and agricultural improvements plus irrigated acreage.",
+          "The asking price remains within budget and has been reduced."
+        ],
+        "unknowns": [
+          "Is the advertised high-and-dry condition supported by official mapping and field conditions?",
+          "Can existing agricultural infrastructure reduce first-phase development costs?",
+          "Will Madison County support commercial campground or RV-destination use?",
+          "What compelling guest experience can the property provide without expensive manufactured amenities?"
+        ],
+        "dealKillers": [
+          "The entitlement path is politically or technically unrealistic.",
+          "The site lacks enough natural or regional draw to sustain the intended business.",
+          "Commercial utilities and wastewater require disproportionate investment."
+        ],
+        "nextActions": [
+          "Verify zoning, future land use, and campground approval path with Madison County.",
+          "Independently check floodplain, wetlands, soils, and the high-and-dry claim.",
+          "Inventory existing infrastructure and identify the strongest feasible destination concept."
+        ]
+      },
+      "verification": {
+        "listingReviewed": true,
+        "parcelIdentified": true,
+        "countyGisReviewed": false,
+        "zoningVerified": false,
+        "futureLandUseVerified": false,
+        "floodReviewed": false,
+        "wetlandsReviewed": false,
+        "accessVerified": false,
+        "utilitiesConfirmed": false,
+        "planningContacted": false,
+        "developmentOrderObtained": false,
+        "siteVisited": false
+      },
       "links": {
         "listing": "https://www.landwatch.com/madison-county-florida-farms-and-ranches-for-sale/pid/425877791",
         "googleMaps": "https://www.google.com/maps/search/?api=1&query=1701+SW+Moseley+Hall+Road+Madison+FL+32340"
