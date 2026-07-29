@@ -1,0 +1,353 @@
+{
+  "metadata": {
+    "batch": "2026-07-curated-1",
+    "updated": "2026-07-29",
+    "researchStatus": "Preliminary listing screen; all zoning, parcel, access, flood, wetlands, and utility facts require independent verification."
+  },
+  "properties": [
+    {
+      "id": "JV-005",
+      "codename": "Cedar Marsh",
+      "name": "20-Acre State Road 24 Tract",
+      "address": "State Road 24",
+      "city": "Cedar Key",
+      "state": "FL",
+      "county": "Levy",
+      "latitude": 29.18,
+      "longitude": -83.00,
+      "locationAccuracy": "Approximate Cedar Key corridor marker pending parcel GIS verification",
+      "listingStatus": "Active when screened",
+      "researchStage": "Preliminary Screen",
+      "price": 385000,
+      "previousPrice": null,
+      "acres": 20.34,
+      "zoning": "Unknown — county verification required",
+      "waterfront": "Water view, pond, and scenic features reported; direct navigable frontage not confirmed",
+      "floodZone": "Unknown; coastal and wetland review is critical",
+      "utilities": "Unknown",
+      "verdict": "INVESTIGATE",
+      "moneyToday": "NOT YET",
+      "buildability": "MAYBE",
+      "score": 84,
+      "destinationScore": 91,
+      "operationsScore": 70,
+      "expansionScore": 72,
+      "summary": "Twenty acres on the Cedar Key approach with water-view, pond, forest, and scenic characteristics reported. The location has immediate Old Florida destination appeal, but coastal floodplain, wetlands, usable acreage, commercial access, and entitlement could either make it a standout or kill it completely.",
+      "realityCheck": {
+        "confirmed": [
+          "The listing reports 20.34 acres within the $500,000 budget.",
+          "State Road 24 provides a strong regional approach toward Cedar Key.",
+          "Cedar Key, Gulf recreation, fishing, wildlife, and Old Florida character create a real destination story."
+        ],
+        "unknowns": [
+          "How much acreage remains usable after floodplain, wetlands, stormwater, and coastal constraints?",
+          "Is commercial campground or RV-destination use permitted or realistically approvable?",
+          "Does the parcel have safe commercial access from State Road 24?",
+          "Are water view and pond features usable amenities or primarily environmental constraints?"
+        ],
+        "dealKillers": [
+          "Environmental constraints leave too little buildable acreage for a viable first phase.",
+          "FDOT or county access requirements prevent safe large-RV entry.",
+          "Commercial transient use is prohibited or politically unrealistic.",
+          "Insurance, stormwater, and wastewater costs erase the location advantage."
+        ],
+        "nextActions": [
+          "Identify the parcel and overlay floodplain, wetlands, future land use, and zoning.",
+          "Ask Levy County whether campground or RV-destination use is permitted or requires special approval.",
+          "Confirm driveway and commercial-access feasibility with the appropriate road authority."
+        ]
+      },
+      "verification": {"listingReviewed":true,"parcelIdentified":false,"countyGisReviewed":false,"zoningVerified":false,"futureLandUseVerified":false,"floodReviewed":false,"wetlandsReviewed":false,"accessVerified":false,"utilitiesConfirmed":false,"planningContacted":false,"developmentOrderObtained":false,"siteVisited":false},
+      "links": {
+        "listing": "https://www.realtor.com/realestateandhomes-detail/State-Rd-24_Cedar-Key_FL_32625_M96677-49641",
+        "googleMaps": "https://www.google.com/maps/search/?api=1&query=State+Road+24+Cedar+Key+FL+32625"
+      }
+    },
+    {
+      "id": "JV-006",
+      "codename": "Chiefland Gateway",
+      "name": "20-Acre Highway Frontage Farm",
+      "address": "SR 345",
+      "city": "Chiefland",
+      "state": "FL",
+      "county": "Levy",
+      "latitude": 29.48,
+      "longitude": -82.86,
+      "locationAccuracy": "Approximate SR 345 corridor marker pending parcel GIS verification",
+      "listingStatus": "Active when screened",
+      "researchStage": "Preliminary Screen",
+      "price": 440000,
+      "previousPrice": null,
+      "acres": 20.0,
+      "zoning": "Residential, formerly agricultural — listing claim requires county verification",
+      "waterfront": "No waterfront confirmed; Cedar Key approximately 20 minutes away per listing",
+      "floodZone": "Unknown",
+      "utilities": "Two wells, electric, irrigation, cable and internet availability reported",
+      "verdict": "INVESTIGATE",
+      "moneyToday": "NOT YET",
+      "buildability": "MAYBE",
+      "score": 86,
+      "destinationScore": 80,
+      "operationsScore": 88,
+      "expansionScore": 83,
+      "summary": "A highly improved 20-acre tract with extensive paved-highway frontage, multiple permitted driveways, wells, electric, irrigation, fencing, and a large pole barn. It is one of the strongest operational head starts in the queue, but residential zoning and commercial-use approval are the entire ballgame.",
+      "realityCheck": {
+        "confirmed": [
+          "The listing reports approximately 1,306 feet of paved SR 345 frontage plus county-road frontage.",
+          "Existing improvements reportedly include two wells, electric service, irrigation, fencing, permitted driveways, and a 40-by-60-foot pole barn.",
+          "Chiefland supplies and Cedar Key recreation are both reasonably close."
+        ],
+        "unknowns": [
+          "Can a commercial RV destination be approved under the current zoning and future land-use designation?",
+          "Can the parcel support commercial wastewater and stormwater requirements?",
+          "Will highway access accommodate large RV traffic without costly improvements?",
+          "Is 20 acres sufficient after buffers, drainage, roads, and support facilities?"
+        ],
+        "dealKillers": [
+          "Residential entitlement cannot be changed or conditioned for the intended use.",
+          "Commercial entrance work or turn-lane requirements consume the budget.",
+          "Usable site count is too low to support the purchase and infrastructure cost."
+        ],
+        "nextActions": [
+          "Verify zoning, future land use, parcel boundaries, and campground approval path with Levy County.",
+          "Confirm permitted-driveway records and commercial-access requirements for SR 345.",
+          "Evaluate whether the existing wells, electric, barn, and irrigation meaningfully reduce Phase 1 costs."
+        ]
+      },
+      "verification": {"listingReviewed":true,"parcelIdentified":false,"countyGisReviewed":false,"zoningVerified":false,"futureLandUseVerified":false,"floodReviewed":false,"wetlandsReviewed":false,"accessVerified":false,"utilitiesConfirmed":false,"planningContacted":false,"developmentOrderObtained":false,"siteVisited":false},
+      "links": {
+        "listing": "https://www.realtor.com/realestateandhomes-detail/0-SR-345_Chiefland_FL_32626_M91804-97003",
+        "googleMaps": "https://www.google.com/maps/search/?api=1&query=SR+345+Chiefland+FL+32626"
+      }
+    },
+    {
+      "id": "JV-007",
+      "codename": "Williston Head Start",
+      "name": "High-and-Dry Improved 20 Acres",
+      "address": "200 SE 183rd Terrace",
+      "city": "Williston",
+      "state": "FL",
+      "county": "Levy",
+      "latitude": 29.38,
+      "longitude": -82.45,
+      "locationAccuracy": "Approximate address marker pending parcel GIS verification",
+      "listingStatus": "Active when screened",
+      "researchStage": "Preliminary Screen",
+      "price": 0,
+      "previousPrice": null,
+      "acres": 20.0,
+      "zoning": "AG reported — county verification required",
+      "waterfront": "No waterfront confirmed",
+      "floodZone": "Advertised high and dry; independent verification required",
+      "utilities": "Well and power reported",
+      "verdict": "INVESTIGATE",
+      "moneyToday": "NOT YET — PRICE NEEDS CONFIRMATION",
+      "buildability": "MAYBE",
+      "score": 79,
+      "destinationScore": 63,
+      "operationsScore": 90,
+      "expansionScore": 82,
+      "summary": "Twenty fenced acres on a paved road with well, power, open pasture, and two pole barns reported. The infrastructure and proximity to Williston, Ocala, Gainesville, and major equestrian destinations create business options, but the current asking price must be confirmed and the site needs a stronger guest-experience concept.",
+      "realityCheck": {
+        "confirmed": [
+          "The listing reports 20 acres, paved-road access, perimeter fencing, well, power, and two pole barns.",
+          "Williston is close, with Ocala and Gainesville regional services within practical reach.",
+          "No HOA and no deed restrictions are reported."
+        ],
+        "unknowns": [
+          "What is the current asking price?",
+          "Does AG zoning permit campground use, require a special exception, or prohibit it?",
+          "Is the high-and-dry claim supported by official flood and soils data?",
+          "What destination concept would create demand beyond equestrian or overnight use?"
+        ],
+        "dealKillers": [
+          "The confirmed price exceeds the project's value threshold.",
+          "Commercial transient use cannot be approved.",
+          "The location lacks sufficient demand for the proposed business model."
+        ],
+        "nextActions": [
+          "Confirm current listing price and status.",
+          "Verify parcel zoning, future land use, floodplain, soils, and campground approval path.",
+          "Assess equestrian-event, Ocala, Gainesville, and regional-travel demand as possible revenue drivers."
+        ]
+      },
+      "verification": {"listingReviewed":true,"parcelIdentified":true,"countyGisReviewed":false,"zoningVerified":false,"futureLandUseVerified":false,"floodReviewed":false,"wetlandsReviewed":false,"accessVerified":false,"utilitiesConfirmed":false,"planningContacted":false,"developmentOrderObtained":false,"siteVisited":false},
+      "links": {
+        "listing": "https://www.realtor.com/realestateandhomes-detail/200-SE-183rd-Ter_Williston_FL_32696_M99872-37853",
+        "googleMaps": "https://www.google.com/maps/search/?api=1&query=200+SE+183rd+Terrace+Williston+FL+32696"
+      }
+    },
+    {
+      "id": "JV-008",
+      "codename": "Pine Revenue",
+      "name": "20-Acre Slash Pine Tract",
+      "address": "TBD-4 221st Road",
+      "city": "Dowling Park",
+      "state": "FL",
+      "county": "Suwannee",
+      "latitude": 30.25,
+      "longitude": -83.24,
+      "locationAccuracy": "Approximate Dowling Park marker pending parcel GIS verification",
+      "listingStatus": "Available when screened",
+      "researchStage": "Preliminary Screen",
+      "price": 195000,
+      "previousPrice": 180000,
+      "acres": 20.0,
+      "zoning": "Unknown — county verification required",
+      "waterfront": "No waterfront confirmed; Suwannee River region",
+      "floodZone": "Unknown",
+      "utilities": "Unknown",
+      "verdict": "INVESTIGATE",
+      "moneyToday": "NOT YET",
+      "buildability": "MAYBE",
+      "score": 77,
+      "destinationScore": 69,
+      "operationsScore": 76,
+      "expansionScore": 86,
+      "summary": "Affordable planted-pine acreage with seller financing reported and additional adjoining parcels potentially available. Pine-straw income and wildlife offer a modest revenue story, while proximity to the Suwannee River region may support an eco-retreat concept if access, zoning, utilities, and demand cooperate.",
+      "realityCheck": {
+        "confirmed": [
+          "The listing reports 20 acres for $195,000 with a lower cash price and seller financing terms.",
+          "The tract is planted in mature improved slash pine with possible pine-straw income.",
+          "Additional adjoining acreage may be available, which could improve scale."
+        ],
+        "unknowns": [
+          "What zoning and future land use apply to the parcel?",
+          "Are power, water, wastewater, and all-weather commercial access economically available?",
+          "How close are meaningful river access, attractions, and guest-demand drivers?",
+          "Would timber operations and an RV destination coexist effectively?"
+        ],
+        "dealKillers": [
+          "Utilities or road improvements make the inexpensive land costly to develop.",
+          "The county will not approve transient commercial use.",
+          "The site is too remote to generate sustainable occupancy."
+        ],
+        "nextActions": [
+          "Identify parcel boundaries, zoning, future land use, road status, floodplain, and wetlands.",
+          "Confirm utility availability and the true cash-price or financing terms.",
+          "Map river access, springs, parks, and regional traffic to determine whether a destination concept exists."
+        ]
+      },
+      "verification": {"listingReviewed":true,"parcelIdentified":false,"countyGisReviewed":false,"zoningVerified":false,"futureLandUseVerified":false,"floodReviewed":false,"wetlandsReviewed":false,"accessVerified":false,"utilitiesConfirmed":false,"planningContacted":false,"developmentOrderObtained":false,"siteVisited":false},
+      "links": {
+        "listing": "https://www.landwatch.com/suwannee-county-florida-undeveloped-land-for-sale/pid/425117861",
+        "googleMaps": "https://www.google.com/maps/search/?api=1&query=221st+Road+Dowling+Park+FL+32060"
+      }
+    },
+    {
+      "id": "JV-009",
+      "codename": "Farr Outpost",
+      "name": "Improved 20-Acre Off-Grid Camp",
+      "address": "Farr Road",
+      "city": "Perry",
+      "state": "FL",
+      "county": "Taylor",
+      "latitude": 30.12,
+      "longitude": -83.58,
+      "locationAccuracy": "Approximate Perry-area marker pending parcel GIS verification",
+      "listingStatus": "Active when screened",
+      "researchStage": "Preliminary Screen",
+      "price": 298000,
+      "previousPrice": null,
+      "acres": 20.0,
+      "zoning": "Unknown — Taylor County verification required",
+      "waterfront": "No waterfront confirmed",
+      "floodZone": "Listing reports only 5 to 6 acres remain dry year-round; major constraint review required",
+      "utilities": "Well, septic, solar, generator, propane, water treatment, 240-volt wiring, and Starlink reported",
+      "verdict": "INVESTIGATE",
+      "moneyToday": "NOT YET",
+      "buildability": "MAYBE — LIMITED DRY ACREAGE REPORTED",
+      "score": 80,
+      "destinationScore": 76,
+      "operationsScore": 92,
+      "expansionScore": 38,
+      "summary": "A remarkably complete off-grid camp with extensive utility infrastructure, structures, trails, fencing, and communications already in place. Taylor County's historically flexible rural environment makes it worth studying, but the reported 5 to 6 dry acres may sharply limit a commercial layout.",
+      "realityCheck": {
+        "confirmed": [
+          "The listing reports well, septic, solar, generator, propane, water treatment, Starlink, 240-volt wiring, structures, fencing, and trails.",
+          "The asking price is within budget and the property could support immediate private or staff use.",
+          "Taylor County deserves priority research based on Chris and Becky's prior experience with comparatively flexible rural RV rules."
+        ],
+        "unknowns": [
+          "What zoning and future land use apply, and what commercial campground process would be required?",
+          "Exactly how much acreage is dry, developable, and suitable for wastewater and roads?",
+          "Can the existing private systems legally or economically serve commercial development?",
+          "Is the location close enough to recreation and travel demand to support guests?"
+        ],
+        "dealKillers": [
+          "Only 5 to 6 dry acres are usable and cannot support a profitable site count.",
+          "Wetlands, floodplain, soils, or wastewater constraints prevent expansion.",
+          "Commercial transient use or access is not approvable despite flexible private-RV rules."
+        ],
+        "nextActions": [
+          "Verify the parcel's zoning, future land use, floodplain, wetlands, soils, and actual dry acreage.",
+          "Ask Taylor County separately about private RV occupancy and commercial campground approval.",
+          "Inventory every existing system and determine which assets are permitted, transferable, and commercially useful."
+        ]
+      },
+      "verification": {"listingReviewed":true,"parcelIdentified":false,"countyGisReviewed":false,"zoningVerified":false,"futureLandUseVerified":false,"floodReviewed":false,"wetlandsReviewed":false,"accessVerified":false,"utilitiesConfirmed":false,"planningContacted":false,"developmentOrderObtained":false,"siteVisited":false},
+      "links": {
+        "listing": "https://www.landwatch.com/taylor-county-florida-recreational-property-for-sale/pid/421204217",
+        "googleMaps": "https://www.google.com/maps/search/?api=1&query=Farr+Road+Perry+FL+32347"
+      }
+    },
+    {
+      "id": "JV-010",
+      "codename": "Kings Bay Cashflow",
+      "name": "Existing Mobile Home Park near Crystal River",
+      "address": "8015 W Baja Court",
+      "city": "Crystal River",
+      "state": "FL",
+      "county": "Citrus",
+      "latitude": 28.91,
+      "longitude": -82.65,
+      "locationAccuracy": "Approximate address marker pending parcel and unit-count verification",
+      "listingStatus": "Active when screened",
+      "researchStage": "Preliminary Screen — Wildcard",
+      "price": 449000,
+      "previousPrice": null,
+      "acres": 4.97,
+      "zoning": "Existing mobile-home-park use reported; exact zoning and expansion rights require verification",
+      "waterfront": "No waterfront; near Kings Bay, Three Sisters Springs, Fort Island Beach, and Gulf recreation",
+      "floodZone": "Unknown",
+      "utilities": "Existing occupied park infrastructure reported; capacity and condition unknown",
+      "verdict": "INVESTIGATE",
+      "moneyToday": "NOT YET — BUSINESS WILDCARD",
+      "buildability": "MAYBE",
+      "score": 88,
+      "destinationScore": 94,
+      "operationsScore": 74,
+      "expansionScore": 55,
+      "summary": "This misses the five-acre target by three-hundredths of an acre, but it is an operating income-producing park near Crystal River's strongest attractions with reported room to expand from six to fifteen units. It may not become the full land-heavy dream, but it could be the fastest path to cash flow and a valuable benchmark against bare-land development.",
+      "realityCheck": {
+        "confirmed": [
+          "The listing reports an existing income-producing mobile home park with six current homes.",
+          "Potential expansion to fifteen units is advertised.",
+          "The location is close to Kings Bay, Three Sisters Springs, Fort Island Beach, downtown Crystal River, and Gulf recreation.",
+          "The asking price remains under $500,000."
+        ],
+        "unknowns": [
+          "Are all existing units, utilities, leases, permits, and park operations legal and documented?",
+          "Are nine additional units actually entitled and physically feasible?",
+          "What are current gross revenue, expenses, occupancy, deferred maintenance, and insurance costs?",
+          "Can the existing use evolve toward the intended retirement business without displacing reliable cash flow?"
+        ],
+        "dealKillers": [
+          "Advertised expansion rights do not exist or utility capacity cannot support them.",
+          "Deferred maintenance, tenant issues, insurance, or compliance liabilities consume the purchase value.",
+          "Current cash flow does not justify the price and management burden."
+        ],
+        "nextActions": [
+          "Request rent roll, leases, trailing financials, permits, utility records, and unit ownership details.",
+          "Verify zoning, legal nonconforming status if applicable, and written expansion rights with Citrus County.",
+          "Inspect every unit and system, then compare purchase-plus-rehab cost against starting from bare land."
+        ]
+      },
+      "verification": {"listingReviewed":true,"parcelIdentified":true,"countyGisReviewed":false,"zoningVerified":false,"futureLandUseVerified":false,"floodReviewed":false,"wetlandsReviewed":false,"accessVerified":false,"utilitiesConfirmed":false,"planningContacted":false,"developmentOrderObtained":false,"siteVisited":false},
+      "links": {
+        "listing": "https://www.land.com/property/8015-w-baja-court-crystal-river-florida-34428/22548154/",
+        "googleMaps": "https://www.google.com/maps/search/?api=1&query=8015+W+Baja+Court+Crystal+River+FL+34428"
+      }
+    }
+  ]
+}
