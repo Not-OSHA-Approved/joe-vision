@@ -1,0 +1,38 @@
+{
+  "metadata": {
+    "version": "0.4.0",
+    "updated": "2026-07-29"
+  },
+  "counties": {
+    "Marion": {
+      "name": "Marion County",
+      "planningPhone": "352-438-2600",
+      "planningEmail": "Zoning@MarionFL.org",
+      "planningHours": "Monday-Friday, 8:00 AM-5:00 PM",
+      "planningAddress": "2710 E. Silver Springs Blvd., Ocala, FL 34470",
+      "gisUrl": "https://www.marionfl.org/agencies-departments/departments-facilities-offices/growth-services/gis-interactive-map",
+      "propertySearchUrl": "https://www.pa.marion.fl.us/",
+      "landDevelopmentCodeUrl": "https://www.marionfl.org/agencies-departments/departments-facilities-offices/growth-services/ldc",
+      "comprehensivePlanUrl": "https://www.marionfl.org/agencies-departments/departments-facilities-offices/growth-services/planning-zoning/comprehensive-plan",
+      "zoningDeterminationUrl": "https://www.marionfl.org/agencies-departments/departments-facilities-offices/growth-services/planning-zoning/p-z-fees-forms",
+      "intelligenceStatus": "Official GIS provides parcel, zoning, future land use, overlays, and aerial imagery.",
+      "verificationNote": "Use the county GIS for screening, then request written zoning determination or planner confirmation before relying on the result.",
+      "lastVerified": "2026-07-29"
+    },
+    "Madison": {
+      "name": "Madison County",
+      "planningPhone": "850-973-3179",
+      "planningEmail": "Not published on the official page",
+      "planningHours": "Monday-Friday, 8:00 AM-4:30 PM EST",
+      "planningAddress": "229 SW Pinckney Street, Suite 219, Madison, FL 32340",
+      "gisUrl": "https://madisoncountyfl.com/departments-services/planning-zoning/future-land-use-maps/",
+      "propertySearchUrl": "https://madisonpa.com/",
+      "landDevelopmentCodeUrl": "https://madisoncountyfl.com/departments-services/planning-zoning/land-development-codes/",
+      "comprehensivePlanUrl": "https://madisoncountyfl.com/departments-services/planning-zoning/comprehensive-plan/",
+      "zoningDeterminationUrl": "https://madisoncountyfl.com/departments-services/planning-zoning/contact-information/",
+      "intelligenceStatus": "Official county tools provide land-development code, future land use, flood information, and planning contacts.",
+      "verificationNote": "Parcel zoning and RV/campground eligibility still require direct confirmation with Madison County Planning & Zoning.",
+      "lastVerified": "2026-07-29"
+    }
+  }
+}
