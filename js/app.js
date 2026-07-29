@@ -29,11 +29,6 @@ function calculateConfidence(verification) {
 function statusClass(property, section) {
   const confidence = calculateConfidence(property.verification);
   if (section === "overview") return property.verdict === "PASS" ? "status-red" : property.verdict === "PURSUE" ? "status-green" : "status-amber";
-  if (section === "reality") {
-    if (property.verdict === "PASS") return "status-red";
-    if (property.moneyToday === "YES" || confidence >= 75) return "status-green";
-    return "status-amber";
-  }
   if (section === "county") return counties[property.county] ? "status-green" : "status-amber";
   if ((property.realityCheck?.dealKillers || []).length >= 2) return "status-red";
   return confidence >= 50 ? "status-green" : "status-amber";
@@ -145,7 +140,6 @@ function renderIntelligencePanel(property) {
   panel.innerHTML = `
     <div class="intelligence-shell">
       ${accordionItem("overview", "Overview", `${property.verdict} · ${property.score}/100 opportunity`, statusClass(property, "overview"), overviewContent(property))}
-      ${accordionItem("reality", "Reality Check", `${calculateConfidence(property.verification)}% due diligence complete`, statusClass(property, "reality"), realityContent(property))}
       ${accordionItem("county", "County Intelligence", counties[property.county] ? `${property.county} official-source profile` : "Profile pending", statusClass(property, "county"), countyContent(property))}
       ${accordionItem("details", "Property Details", "Zoning, utilities, flood and expansion", statusClass(property, "details"), detailsContent(property))}
     </div>`;
@@ -157,11 +151,17 @@ function renderIntelligencePanel(property) {
   });
 }
 
+function renderRealitySection(property) {
+  const section = document.getElementById("reality-check-panel");
+  section.innerHTML = realityContent(property);
+}
+
 function renderProperty(property) {
   activePropertyId = property.id;
   openAccordionSection = "overview";
   renderQueue();
   renderIntelligencePanel(property);
+  renderRealitySection(property);
   const marker = markers.get(property.id);
   if (marker) {
     window.joeVisionMap.setView(marker.getLatLng(), 8, { animate: true });
