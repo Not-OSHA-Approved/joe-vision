@@ -15,16 +15,19 @@ function formatCurrency(value) {
   }).format(value);
 }
 
-function severityClass(severity) {
-  return severity === "critical" ? "red" : severity === "warning" ? "amber" : "green";
-}
-
 function verdictClass(verdict) {
   return verdict === "PURSUE" ? "verdict-pursue" : verdict === "PASS" ? "verdict-pass" : "verdict-investigate";
 }
 
 function buildFact(label, value) {
   return `<div class="fact"><small>${label}</small><strong>${value}</strong></div>`;
+}
+
+function calculateConfidence(verification) {
+  const checks = Object.values(verification || {});
+  if (!checks.length) return 0;
+  const completed = checks.filter(Boolean).length;
+  return Math.round((completed / checks.length) * 100);
 }
 
 function renderMetrics(data) {
@@ -87,6 +90,40 @@ function renderCountyIntelligence(property) {
   `;
 }
 
+function renderList(items, itemClass) {
+  return items.map(item => `<li class="${itemClass}">${item}</li>`).join("");
+}
+
+function renderRealityCheck(property) {
+  const confidence = calculateConfidence(property.verification);
+  const check = property.realityCheck;
+  const panel = document.querySelector(".flags");
+  panel.className = `flags reality-check ${verdictClass(property.verdict)}`;
+  panel.innerHTML = `
+    <div class="reality-header">
+      <div>
+        <div class="reality-kicker">Reality Check</div>
+        <h3>Would we spend our own money today?</h3>
+        <div class="money-answer">${property.moneyToday}</div>
+      </div>
+      <div class="reality-scores">
+        <div><small>Opportunity</small><strong>${property.score}</strong><span>/100</span></div>
+        <div><small>Confidence</small><strong>${confidence}</strong><span>%</span></div>
+      </div>
+    </div>
+    <div class="confidence-wrap">
+      <div class="confidence-label"><span>Due diligence completed</span><strong>${confidence}%</strong></div>
+      <div class="confidence-track"><span style="width:${confidence}%"></span></div>
+    </div>
+    <div class="reality-grid">
+      <section class="reality-section confirmed"><h4>Confirmed</h4><ul>${renderList(check.confirmed, "confirmed-item")}</ul></section>
+      <section class="reality-section unknowns"><h4>Unknowns</h4><ul>${renderList(check.unknowns, "unknown-item")}</ul></section>
+      <section class="reality-section killers"><h4>Deal Killers</h4><ul>${renderList(check.dealKillers, "killer-item")}</ul></section>
+      <section class="reality-section actions-list"><h4>Next Three Actions</h4><ol>${check.nextActions.map(item => `<li>${item}</li>`).join("")}</ol></section>
+    </div>
+  `;
+}
+
 function renderProperty(property) {
   activePropertyId = property.id;
   renderQueue();
@@ -107,7 +144,7 @@ function renderProperty(property) {
     buildFact("Utilities", property.utilities),
     buildFact("Expansion", `${property.expansionScore}/100`)
   ].join("");
-  document.querySelector(".flags").innerHTML = `<h3>Dream killers — verify before falling in love</h3>${property.criticalDueDiligence.map(item => `<div class="flag"><i class="dot ${severityClass(item.severity)}"></i><span>${item.text}</span></div>`).join("")}`;
+  renderRealityCheck(property);
   const actionLinks = document.querySelectorAll(".actions a");
   actionLinks[0].href = property.links.listing;
   actionLinks[1].href = property.links.googleMaps;
