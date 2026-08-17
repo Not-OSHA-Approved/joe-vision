@@ -1,0 +1,83 @@
+{
+  "metadata": {
+    "batch": "2026-08-daily-hunt",
+    "updated": "2026-08-17",
+    "researchStatus": "Daily-hunt preliminary screen. Listing claims, zoning, flood, access, utilities, commercial use and availability require independent verification."
+  },
+  "properties": [
+    {
+      "id": "JV-018",
+      "codename": "Winquepin Basecamp",
+      "name": "40-Acre Improved Madison County Basecamp",
+      "address": "2959 SE Winquepin St",
+      "city": "Lee",
+      "state": "FL",
+      "county": "Madison",
+      "latitude": 30.300516,
+      "longitude": -83.276091,
+      "locationAccuracy": "Listing coordinates; parcel boundaries require GIS verification",
+      "listingStatus": "Active when screened",
+      "researchStage": "Preliminary Screen — Daily Hunt",
+      "price": 295000,
+      "previousPrice": 350000,
+      "acres": 40.02,
+      "zoning": "Dry industrial/ag context reported in daily-hunt research; exact parcel zoning and permitted commercial uses require Madison County verification",
+      "waterfront": "No direct waterfront; Boundary Bend/Suwannee River recreation nearby",
+      "floodZone": "Listing advertises high and dry / 100% usable; independent FEMA and county GIS verification required",
+      "utilities": "Existing mobile home and well reported; full utility and septic capacity require verification",
+      "verdict": "INVESTIGATE",
+      "moneyToday": "MAYBE — EXISTING IMPROVEMENTS CUT STARTUP TIME",
+      "buildability": "PROMISING",
+      "score": 93,
+      "destinationScore": 86,
+      "operationsScore": 94,
+      "expansionScore": 95,
+      "summary": "Forty acres, an existing 1,800-square-foot mobile home, a 30x60 barn, reported high-and-dry usable land, and a recent $55,000 price cut make this a strong operational base rather than raw dirt. The big question is whether Madison County will support Joe's intended commercial use and whether the existing infrastructure can be reused economically.",
+      "realityCheck": {
+        "confirmed": [
+          "Current listing price is $295,000 after a $55,000 reduction from $350,000.",
+          "The parcel is 40.02 acres in Madison County, about six miles from I-10 according to the listing.",
+          "A 1,800-square-foot manufactured home and 30x60 barn are reported onsite.",
+          "The listing reports a well, county-road frontage and high-and-dry usable acreage.",
+          "The manufactured home is tenant occupied and the broker states it needs extensive work."
+        ],
+        "unknowns": [
+          "What exact zoning and future-land-use designations apply to parcel 24-2S-10-1473-004-000?",
+          "Can an RV park, campground, cabins, events or other revenue-producing uses be approved here?",
+          "What septic system exists and what commercial wastewater capacity is feasible?",
+          "Are the barn, home, well, septic and electrical improvements permitted and reusable?",
+          "How much of the advertised high-and-dry claim survives FEMA, wetlands, soils and drainage review?"
+        ],
+        "dealKillers": [
+          "County land-use rules block the intended revenue model.",
+          "Wastewater limitations prevent a viable site count.",
+          "Existing improvements require enough remediation that their head start disappears.",
+          "Flood, wetlands, access or road conditions materially reduce usable acreage or guest access."
+        ],
+        "nextActions": [
+          "Pull Madison County GIS, zoning, future land use, FEMA flood, wetlands and soils for parcel 24-2S-10-1473-004-000.",
+          "Ask Madison County planning for the written approval path for campground/RV/cabin/event uses on this parcel.",
+          "Verify permits and condition for the home, 30x60 barn, well, septic and electrical service, including tenant status and possession at closing."
+        ]
+      },
+      "verification": {
+        "listingReviewed": true,
+        "parcelIdentified": true,
+        "countyGisReviewed": false,
+        "zoningVerified": false,
+        "futureLandUseVerified": false,
+        "floodReviewed": false,
+        "wetlandsReviewed": false,
+        "accessVerified": false,
+        "utilitiesConfirmed": false,
+        "planningContacted": false,
+        "developmentOrderObtained": false,
+        "siteVisited": false
+      },
+      "links": {
+        "listing": "https://www.zillow.com/homedetails/2959-SE-Winquepin-St-Lee-FL-32059/299415615_zpid/",
+        "googleMaps": "https://www.google.com/maps/search/?api=1&query=2959+SE+Winquepin+St+Lee+FL+32059"
+      }
+    }
+  ]
+}
