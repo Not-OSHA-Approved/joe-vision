@@ -1,7 +1,7 @@
 {
   "metadata": {
     "batch": "2026-08-daily-hunt",
-    "updated": "2026-08-17",
+    "updated": "2026-08-18",
     "researchStatus": "Daily-hunt preliminary screen. Listing claims, zoning, flood, access, utilities, commercial use and availability require independent verification."
   },
   "properties": [
@@ -77,6 +77,87 @@
       "links": {
         "listing": "https://www.zillow.com/homedetails/2959-SE-Winquepin-St-Lee-FL-32059/299415615_zpid/",
         "googleMaps": "https://www.google.com/maps/search/?api=1&query=2959+SE+Winquepin+St+Lee+FL+32059"
+      }
+    },
+    {
+      "id": "JV-019",
+      "codename": "Shaw Lake Springs",
+      "name": "40-Acre Shaw Lake Waterfront Tract",
+      "address": "141 N Pine St",
+      "city": "Pierson",
+      "state": "FL",
+      "county": "Volusia",
+      "latitude": 29.2416,
+      "longitude": -81.45,
+      "locationAccuracy": "Listing coordinates; parcel boundaries and shoreline require GIS verification",
+      "listingStatus": "Active when screened on August 18, 2026",
+      "researchStage": "Preliminary Screen — Daily Hunt",
+      "price": 500000,
+      "previousPrice": 600000,
+      "acres": 40,
+      "zoning": "Agricultural reported by listing; exact Volusia County zoning and future land use require parcel-level verification",
+      "waterfront": "Extensive Shaw Lake frontage and a natural spring reported",
+      "floodZone": "Unknown; listing identifies wetlands on the parcel and describes the existing home as high and dry",
+      "utilities": "Public water reported plus two power supplies and two septic systems; capacity and permits require verification",
+      "verdict": "INVESTIGATE",
+      "moneyToday": "NOT YET — PREMIUM PRICE, PREMIUM DESTINATION STORY",
+      "buildability": "PROMISING BUT ENVIRONMENTALLY SENSITIVE",
+      "score": 94,
+      "destinationScore": 97,
+      "operationsScore": 84,
+      "expansionScore": 90,
+      "summary": "This is one of the strongest destination-oriented raw-property leads on the board: 40 acres with private Shaw Lake frontage, a reported natural spring, an existing 2-bedroom home, two septic systems and two power supplies, plus a $100,000 price reduction. It costs materially more than the Madison County candidates, but the waterfront and springs corridor create a guest draw they do not have. Wetlands, floodplain, shoreline constraints and commercial entitlement are the deciding issues.",
+      "realityCheck": {
+        "confirmed": [
+          "Multiple current listing sources show 40 acres at $500,000 after a July 2026 reduction from $600,000.",
+          "The property is marketed with extensive Shaw Lake frontage and a natural spring.",
+          "A 1,072-square-foot 2-bedroom, 1-bath home built in 1938 is included and sold as-is.",
+          "The listing reports two power supplies and two septic systems; Zillow also reports electric utility service on the property.",
+          "The parcel is APN 4835-00-00-0430 and listings describe it as agricultural with wetlands and potential subdivision subject to approvals.",
+          "Volusia County records show that temporary campsites and recreational uses have previously been processed through special exceptions on A-1 agricultural land, demonstrating that a discretionary approval path can exist, but not that this parcel qualifies."
+        ],
+        "unknowns": [
+          "What exact zoning and Future Land Use designation apply to APN 4835-00-00-0430, and is the parcel inside the City of Pierson or unincorporated Volusia County jurisdiction?",
+          "How much of the 40 acres is wetlands, floodplain, shoreline buffer or otherwise unavailable for RV sites, cabins, roads and wastewater?",
+          "Can a permanent campground/RV park, cabins, event use or mixed lodging concept be approved, and would it require rezoning, special exception, comprehensive-plan amendment or other discretionary approval?",
+          "What are the permitted capacities and condition of both septic systems and both electrical services, and can public water serve commercial demand?",
+          "What shoreline, dock, stormwater and environmental permits would be required for guest access to Shaw Lake and the natural spring?",
+          "Is practical large-RV ingress/egress available from N Pine Street without major road or entrance work?"
+        ],
+        "dealKillers": [
+          "Wetlands, floodplain or environmental buffers leave too little contiguous usable acreage for a viable site plan.",
+          "Commercial transient lodging or campground use cannot be approved under the parcel's zoning and Future Land Use framework.",
+          "Wastewater expansion is infeasible or prohibitively expensive because of soils, lake setbacks or environmental rules.",
+          "Large-RV access, commercial entrance requirements or neighborhood compatibility make operations impractical.",
+          "The waterfront and spring cannot be used meaningfully by guests, leaving the $500,000 acquisition premium unsupported."
+        ],
+        "nextActions": [
+          "Use Volusia County ConnectLive/GRM mapping and the property appraiser to confirm jurisdiction, zoning, Future Land Use, overlays, parcel boundaries and permit history for APN 4835-00-00-0430.",
+          "Map FEMA floodplain, wetlands, soils and shoreline/environmental buffers and estimate contiguous dry usable acreage before spending money on design work.",
+          "Request a pre-application conversation with Volusia County or Pierson planning, as applicable, specifically for a permanent RV park/campground, cabins and event uses; ask what discretionary approvals would be required.",
+          "Pull permits and inspect both septic systems, both electrical services, public-water availability and the 1938 house before assigning value to existing infrastructure.",
+          "Confirm commercial driveway geometry and large-RV turning access from N Pine Street, then sketch a conservative site count using only verified dry acreage."
+        ]
+      },
+      "verification": {
+        "listingReviewed": true,
+        "parcelIdentified": true,
+        "countyGisReviewed": false,
+        "zoningVerified": false,
+        "futureLandUseVerified": false,
+        "floodReviewed": false,
+        "wetlandsReviewed": false,
+        "accessVerified": false,
+        "utilitiesConfirmed": false,
+        "planningContacted": false,
+        "developmentOrderObtained": false,
+        "siteVisited": false
+      },
+      "links": {
+        "listing": "https://www.zillow.com/homedetails/141-N-Pine-St-Pierson-FL-32180/47928612_zpid/",
+        "landSearch": "https://www.landsearch.com/properties/141-n-pine-st-pierson-fl-32180/5216065",
+        "landCom": "https://www.land.com/property/141-n-pine-street-pierson-florida-32180/27118496/",
+        "googleMaps": "https://www.google.com/maps/search/?api=1&query=141+N+Pine+St+Pierson+FL+32180"
       }
     }
   ]
