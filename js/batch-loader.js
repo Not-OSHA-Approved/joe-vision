@@ -5,7 +5,8 @@
   const primaryCandidatePath = "data/candidates-2026-07.json";
   const additionalCandidatePaths = [
     "data/candidates-2026-07-batch-2.json",
-    "data/candidates-2026-08.json"
+    "data/candidates-2026-08.json",
+    "data/candidates-2026-08-batch-2.json"
   ];
 
   window.fetch = async (input, init) => {
