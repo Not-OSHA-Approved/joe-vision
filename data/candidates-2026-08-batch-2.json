@@ -1,0 +1,93 @@
+{
+  "metadata": {
+    "batch": "2026-08-daily-hunt-2",
+    "updated": "2026-08-20",
+    "researchStatus": "Daily-hunt preliminary screen. Listing claims, income, zoning, licensing, flood, access, utilities, septic capacity, commercial use and availability require independent verification."
+  },
+  "properties": [
+    {
+      "id": "JV-020",
+      "codename": "Lucedale Launchpad",
+      "name": "24.97-Acre Highway 98 RV Income Tract",
+      "address": "14119 US Highway 98",
+      "city": "Lucedale",
+      "state": "MS",
+      "county": "George",
+      "latitude": 30.9132,
+      "longitude": -88.4911,
+      "locationAccuracy": "Listing coordinates; parcel boundaries and existing RV-site layout require survey/GIS verification",
+      "listingStatus": "Active when screened on August 20, 2026",
+      "researchStage": "Preliminary Screen — Daily Hunt",
+      "price": 279000,
+      "previousPrice": null,
+      "acres": 24.97,
+      "zoning": "Listing describes current use as agricultural/investment; county land-use, campground/RV-park approval and any association restrictions require verification",
+      "waterfront": "Large shared spring-fed pond at rear of property",
+      "floodZone": "Unknown; floodplain, wetlands and pond-edge constraints require parcel-level review",
+      "utilities": "Community water, connected electricity and three septic tanks reported; ten existing RV rental spaces with six reportedly occupied month-to-month",
+      "verdict": "INVESTIGATE — HIGH PRIORITY",
+      "moneyToday": "POTENTIALLY YES — EXISTING RV INCOME CHANGES THE MATH",
+      "buildability": "PROMISING — EXISTING OPERATING FOOTPRINT",
+      "score": 96,
+      "destinationScore": 86,
+      "operationsScore": 99,
+      "expansionScore": 95,
+      "summary": "This is the strongest operations-first candidate found in the current hunt. For $279,000, the listing reports 24.97 acres, ten existing RV rental spaces with six occupied month-to-month, community water, connected electricity, three septic tanks and a large spring-fed pond. Unlike most JOE VISION candidates, it may produce revenue on day one while preserving substantial acreage for expansion. The decisive issue is whether the existing RV operation, septic capacity and commercial use are fully legal and transferable.",
+      "realityCheck": {
+        "confirmed": [
+          "LandSearch currently shows the 24.97-acre property active at $279,000 and identifies parcel 0208-33-0-045.00.",
+          "Multiple listing sources describe ten existing RV rental spaces with six currently rented on month-to-month terms.",
+          "Community water, connected electricity and three septic tanks are reported.",
+          "A large spring-fed pond is reported at the rear of the property and is shared with the neighboring parcel.",
+          "The property has US Highway 98 frontage and is marketed as centrally located between Lucedale and Mobile.",
+          "The current MLS marketing identifies agricultural and investment use, while commercial campground/RV entitlement is not independently verified."
+        ],
+        "unknowns": [
+          "Are all ten RV spaces legally permitted, licensed and grandfathered for continued commercial rental use after a sale?",
+          "What are the actual monthly rents, collections, occupancy history, utility expenses and trailing twelve-month net operating income?",
+          "What are the permitted capacities, ages and service histories of the three septic tanks, and how many RV spaces can they legally serve?",
+          "Does parcel 0208-33-0-045.00 have county zoning, land-use, subdivision, mobile-home-park or campground restrictions that limit expansion?",
+          "Homes.com reports an association while other sources do not emphasize one; does any HOA, road association, covenant or recorded restriction exist and what does it control?",
+          "How much acreage remains dry, buildable and usable after floodplain, wetlands, pond setbacks, existing improvements and required buffers?",
+          "What rights attach to the shared spring-fed pond, including shoreline control, access, maintenance and guest use?",
+          "Can additional RV sites, cabins, glamping units, bathhouse/laundry facilities or event amenities be added without major off-site utility upgrades?"
+        ],
+        "dealKillers": [
+          "Existing RV rentals are unpermitted, nonconforming in a non-transferable way, or otherwise cannot legally continue after closing.",
+          "Septic systems are undersized, failing or cannot support the existing ten spaces plus expansion at reasonable cost.",
+          "Recorded covenants, an HOA or county rules prohibit commercial campground expansion or materially restrict the current operation.",
+          "Verified rents and expenses show little or no meaningful income despite the six occupied spaces.",
+          "Floodplain, wetlands or pond setbacks consume most of the undeveloped acreage and eliminate practical expansion."
+        ],
+        "nextActions": [
+          "Request the current rent roll, leases/month-to-month agreements, utility bills, tax returns or operating statements and twelve months of collections for all ten RV spaces.",
+          "Ask George County and the Mississippi State Department of Health for the permit/licensing history of the existing RV operation and written confirmation of continued use after transfer.",
+          "Pull parcel 0208-33-0-045.00 records, deeds, covenants, association documents, flood maps, wetlands and survey information.",
+          "Obtain septic permits, design capacities, pump/service records and confirm exactly how the three systems are connected to the ten existing spaces.",
+          "Verify electrical service size, individual or master metering, community-water capacity and the cost to extend infrastructure deeper into the tract.",
+          "Walk the site with a conservative expansion concept showing existing ten spaces first, then additional RV sites/cabins only on verified dry usable ground."
+        ]
+      },
+      "verification": {
+        "listingReviewed": true,
+        "parcelIdentified": true,
+        "countyGisReviewed": false,
+        "zoningVerified": false,
+        "futureLandUseVerified": false,
+        "floodReviewed": false,
+        "wetlandsReviewed": false,
+        "accessVerified": false,
+        "utilitiesConfirmed": false,
+        "planningContacted": false,
+        "developmentOrderObtained": false,
+        "siteVisited": false
+      },
+      "links": {
+        "listing": "https://www.landsearch.com/properties/lucedale-ms-39452/4930168",
+        "zillow": "https://www.zillow.com/homedetails/14119-Us-Highway-98-Lucedale-MS-39452/458719563_zpid/",
+        "homes": "https://www.homes.com/property/14119-us-highway-98-lucedale-ms/1b91ypd5khylm/",
+        "googleMaps": "https://www.google.com/maps/search/?api=1&query=14119+US+Highway+98+Lucedale+MS+39452"
+      }
+    }
+  ]
+}
