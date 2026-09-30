@@ -1,0 +1,91 @@
+{
+  "metadata": {
+    "batch": "2026-09-daily-hunt",
+    "updated": "2026-09-30",
+    "researchStatus": "Daily-hunt preliminary screen. Listing claims, permits, utilities, sewer cost, owner-financing terms, flood, access, site layout and transferable approvals require independent verification."
+  },
+  "properties": [
+    {
+      "id": "JV-021",
+      "codename": "Brewton Basecamp",
+      "name": "43-Site Permitted RV Park Buildout",
+      "address": "116 Saint Nicholas Ave",
+      "city": "Brewton",
+      "state": "AL",
+      "county": "Escambia",
+      "latitude": 31.105,
+      "longitude": -87.072,
+      "locationAccuracy": "Approximate address marker pending parcel GIS and survey verification",
+      "listingStatus": "Active when screened on September 30, 2026",
+      "researchStage": "Preliminary Screen — Daily Hunt",
+      "price": 375000,
+      "previousPrice": null,
+      "acres": 4.2,
+      "zoning": "RV-park development reportedly approved/permitted by City of Brewton; exact approvals, conditions and transferability require written verification",
+      "waterfront": "No waterfront confirmed",
+      "floodZone": "Unknown — parcel-level flood and drainage review required",
+      "utilities": "Water reportedly installed to sites; 30A/50A electrical hookups installed, inspected and signed off; four electrical meters; sewer engineering/plans reportedly approved but connection remains to be completed",
+      "verdict": "INVESTIGATE — HIGH PRIORITY",
+      "moneyToday": "NOT YET — PARTIALLY BUILT, OWNER FINANCING REPORTED",
+      "buildability": "STRONG ON PAPER — ENTITLEMENTS/INFRASTRUCTURE HEAD START",
+      "score": 94,
+      "destinationScore": 72,
+      "operationsScore": 98,
+      "expansionScore": 61,
+      "summary": "A compact 4.2-acre project that reportedly already has city approval for 43 RV sites, installed water and inspected 30A/50A electrical infrastructure, plus an unfinished common/wash-house building. The acreage is tight, but the entitlement and utility head start plus advertised owner financing could eliminate a large portion of JOE VISION Phase 1 cost and risk. The decisive questions are whether the 43-site approvals are current and transferable, whether the layout is operationally comfortable for large rigs, and what it really costs to finish sewer and open legally.",
+      "realityCheck": {
+        "confirmed": [
+          "Current listing marketing asks $375,000 for approximately 4.2 acres.",
+          "The property is marketed as approved/permitted for 43 RV sites.",
+          "Listing marketing reports water installed at the sites and 30A/50A electrical hookups installed, inspected and signed off.",
+          "Four electrical meters and an unfinished approximately 600-700 sq. ft. common/wash-house building are reported.",
+          "Sewer engineering/plans are reported approved, with seller-estimated completion cost around $60,000.",
+          "Owner financing is explicitly advertised."
+        ],
+        "unknowns": [
+          "Are all 43 RV-site approvals, permits and utility inspections current, transferable and sufficient to open after completion?",
+          "What are the exact owner-financing terms: down payment, rate, amortization, balloon, personal guarantee and prepayment provisions?",
+          "Does the 4.2-acre layout provide acceptable pad dimensions, internal roads, turning radii, setbacks, parking, fire access and guest privacy for 43 modern RVs?",
+          "What is the contractor-backed cost to complete the municipal sewer connection, site laterals, restroom/laundry building and remaining civil work?",
+          "What stormwater, drainage, landscaping, lighting, signage, ADA and fire-marshal work remains?",
+          "Is there sufficient electrical and water capacity for full 43-site occupancy under peak conditions?",
+          "What local nightly/monthly demand and achievable rates support the completed project?"
+        ],
+        "dealKillers": [
+          "The advertised 43-site approval is expired, non-transferable, conditional on major additional work or materially different from the current site plan.",
+          "The compact layout cannot safely or comfortably accommodate the target RV mix and required circulation.",
+          "Sewer, drainage, civil, fire-code or utility completion costs push total project basis beyond a defensible operating value.",
+          "Owner-financing terms are too aggressive to preserve working capital during buildout and lease-up.",
+          "Flood or drainage conditions create unacceptable operating or construction risk."
+        ],
+        "nextActions": [
+          "Obtain the stamped 43-site plan, city approvals, permits, inspection sign-offs and written confirmation from Brewton that approvals remain valid and transfer with the property.",
+          "Request written owner-financing terms before spending money on deeper diligence.",
+          "Get contractor pricing for the complete sewer connection and all remaining work required for certificate of occupancy/opening.",
+          "Overlay the approved plan with large-rig turning templates, pad dimensions, fire access, guest parking and amenity space to test whether 43 sites is operationally realistic.",
+          "Verify floodplain, drainage, parcel boundaries, title, access and utility capacities.",
+          "Build a conservative 30-, 36- and 43-site operating model rather than assuming every approved pad should be built."
+        ]
+      },
+      "verification": {
+        "listingReviewed": true,
+        "parcelIdentified": false,
+        "countyGisReviewed": false,
+        "zoningVerified": false,
+        "futureLandUseVerified": false,
+        "floodReviewed": false,
+        "wetlandsReviewed": false,
+        "accessVerified": false,
+        "utilitiesConfirmed": false,
+        "planningContacted": false,
+        "developmentOrderObtained": false,
+        "siteVisited": false
+      },
+      "links": {
+        "listing": "https://www.landsearch.com/properties/116-saint-nicholas-ave-brewton-al-36426/5537982",
+        "realtor": "https://www.realtor.com/realestateandhomes-detail/116-Saint-Nicholas-Ave_Brewton_AL_36426_M96157-34656",
+        "googleMaps": "https://www.google.com/maps/search/?api=1&query=116+Saint+Nicholas+Ave+Brewton+AL+36426"
+      }
+    }
+  ]
+}
