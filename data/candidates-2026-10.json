@@ -1,0 +1,79 @@
+{
+  "metadata": {
+    "batch": "2026-10-daily-hunt",
+    "updated": "2026-10-08",
+    "researchStatus": "Preliminary conditional screen; verify listing and permits independently."
+  },
+  "properties": [
+    {
+      "id": "JV-022",
+      "codename": "Melrose Workshop Retreat",
+      "name": "Five-Acre Improved Homesite",
+      "address": "164 Melrose Landing Blvd",
+      "city": "Hawthorne",
+      "state": "FL",
+      "county": "Putnam",
+      "latitude": 29.65,
+      "longitude": -81.97,
+      "locationAccuracy": "Approximate; verify parcel GIS",
+      "listingStatus": "Advertised active October 8, 2026",
+      "researchStage": "Preliminary Screen — Conditional Fit",
+      "price": 159900,
+      "previousPrice": null,
+      "acres": 5,
+      "zoning": "Agricultural reportedly; aviation community covenants unverified",
+      "waterfront": "None reported",
+      "floodZone": "Unknown; FEMA verification needed",
+      "utilities": "Well and electric reportedly installed; 20x30 metal building; septic permitted, installation not confirmed",
+      "verdict": "INVESTIGATE — CONDITIONAL",
+      "moneyToday": "NOT YET",
+      "buildability": "MAYBE",
+      "score": 78,
+      "destinationScore": 62,
+      "operationsScore": 81,
+      "expansionScore": 70,
+      "summary": "Five wooded acres with workshop, well, power and driveway. Verify no HOA/deed restrictions, septic installation, flood zone, and safe 40-foot RV access before considering further.",
+      "realityCheck": {
+        "confirmed": [
+          "Listing advertised for $159,900 on five acres.",
+          "Listing reports metal building, drilled well and electrical improvements.",
+          "Septic is reported permitted; installation unverified."
+        ],
+        "unknowns": [
+          "Any HOA, airstrip easements or deed restrictions?",
+          "Is septic actually installed?",
+          "Can a 40-foot motorhome enter and exit safely?",
+          "Is parcel outside FEMA AE?"
+        ],
+        "dealKillers": [
+          "Restrictive HOA/covenants.",
+          "Unusable motorhome access.",
+          "FEMA AE or missing utilities with prohibitive cost."
+        ],
+        "nextActions": [
+          "Obtain covenants and aviation easements.",
+          "Verify septic, well and electric permits.",
+          "Review FEMA/GIS and driveway access."
+        ]
+      },
+      "verification": {
+        "listingReviewed": true,
+        "parcelIdentified": false,
+        "countyGisReviewed": false,
+        "zoningVerified": false,
+        "futureLandUseVerified": false,
+        "floodReviewed": false,
+        "wetlandsReviewed": false,
+        "accessVerified": false,
+        "utilitiesConfirmed": false,
+        "planningContacted": false,
+        "developmentOrderObtained": false,
+        "siteVisited": false
+      },
+      "links": {
+        "listing": "https://www.landsearch.com/properties/164-melrose-landing-blvd-hawthorne-fl-32640/5593164",
+        "googleMaps": "https://www.google.com/maps/search/?api=1&query=164+Melrose+Landing+Blvd+Hawthorne+FL+32640"
+      }
+    }
+  ]
+}
